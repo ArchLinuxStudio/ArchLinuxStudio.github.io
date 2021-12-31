@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: archlinuxstudio.github.io
+Token: e7f5052f0de0d563c44838abd6cad38d5a6c4349b699fc297cb2be57cc0976bd
