@@ -1,12 +1,37 @@
 # ArchLinuxStudio Offical Website
 
-### 赠言
+## Who we are, what we do
 
-学习从来都是一件严肃的事，任何娱乐化、简单化、功利化的教学注定无法达到教化育人的目的。欲速则不达，如今中文局域网中充斥着各类标榜速成等字眼的课程，这无疑也是恶性资本侵蚀教育领域的结果之一。速成的结果只有两种，一种是你只能学到极为肤浅的皮毛、另一种是速成的质量令人堪忧，什么都掌握了，但好像什么都不懂。
+We are an Arch Linux community organization based in Canada. We are NOT the official Arch Linux organization. We have nothing to do with archlinux-cn. We do not have any profitable projects. We are always operating at a loss.
 
-我们尽力提供对所有人平等的教育。我们的课程的主要目标是推广自由软件运动，为学生提供从计算机系统、软件、互联网访问等各个方面的自由。你可以在其中看到自由的系统和软件的使用方式，也可以学习到如何开发一些自由软件，以使你可以在网络被封锁的国家或地区自由地连接全世界的互联网。
+We are committed to the promotion of the free software movement. At the same time, we help people in countries where the Internet is blocked to break through Internet blocking and censorship.
 
-### ArchLinuxStudio 系列文档
+If you need tools to break through Internet blocking and censorship, please send a blank email to archlinuxstudio@tutamail.com. We will send it for you.
+
+If you have any news that you want to share with us, please use tutamail to send us an encrypted email.
+
+Special thanks to Tutanota for providing email support to us. Fighting for democracy and freedom, we are not alone.
+
+---
+
+我们是位于加拿大的 Arch Linux 社区组织。 我们不是官方的 Arch Linux 组织。 我们与 archlinux-cn 无关。 我们没有任何有利可图的项目。 我们总是在亏本经营。
+
+我们致力于推动自由软件运动。 同时，我们帮助互联网被封锁国家的人们突破互联网封锁和审查。
+
+如果您需要工具来突破互联网封锁和审查，请发送空白电子邮件至 archlinuxstudio@tutamail.com。 我们会为您发送。
+
+如果您有任何消息想与我们分享，请使用 tutamail 向我们发送加密电子邮件。
+
+特别感谢 Tutanota 为我们提供电子邮件支持。 为民主和自由而战，我们并不孤单。
+
+## ArchLinuxStudio documents
+
+- Arch Linux Tutorial： [Read online](https://archlinuxstudio.github.io/ArchLinuxTutorial/#/){:target="\_blank"}
+- Modern Security Protection Guide：[Read online](https://github.com/ArchLinuxStudio/ModernSecurityProtectionGuide){:target="\_blank"}
+- [WIP]Linux Network Programming And Encryption ： [Read online](https://archlinuxstudio.github.io/LinuxNetworkProgrammingAndEncryption/#/){:target="\_blank"}
+- [WIP]Linux Shell Tutorial： [Read online](https://archlinuxstudio.github.io/ShellTutorial/#/){:target="\_blank"}
+
+---
 
 - Arch Linux 安装使用教程： [在线阅读](https://archlinuxstudio.github.io/ArchLinuxTutorial/#/){:target="\_blank"}
 - 现代隐私保护指南：[在线阅读](https://github.com/ArchLinuxStudio/ModernSecurityProtectionGuide){:target="\_blank"}
