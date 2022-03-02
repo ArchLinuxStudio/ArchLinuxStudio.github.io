@@ -27,13 +27,13 @@ Special thanks to Tutanota for providing email support to us. Fighting for democ
 ## ArchLinuxStudio documents
 
 - Arch Linux Tutorial： [Read online](https://archlinuxstudio.github.io/ArchLinuxTutorial/#/){:target="\_blank"}
-- Modern Security Protection Guide：[Read online](https://github.com/ArchLinuxStudio/ModernSecurityProtectionGuide){:target="\_blank"}
+- Modern Security Protection Guide：[Read online](https://archlinuxstudio.github.io/ModernSecurityProtectionGuide){:target="\_blank"}
 - [WIP]Linux Network Programming And Encryption ： [Read online](https://archlinuxstudio.github.io/LinuxNetworkProgrammingAndEncryption/#/){:target="\_blank"}
 - [WIP]Linux Shell Tutorial： [Read online](https://archlinuxstudio.github.io/ShellTutorial/#/){:target="\_blank"}
 
 ---
 
 - Arch Linux 安装使用教程： [在线阅读](https://archlinuxstudio.github.io/ArchLinuxTutorial/#/){:target="\_blank"}
-- 现代隐私保护指南：[在线阅读](https://github.com/ArchLinuxStudio/ModernSecurityProtectionGuide){:target="\_blank"}
+- 现代隐私保护指南：[在线阅读](https://archlinuxstudio.github.io/ModernSecurityProtectionGuide){:target="\_blank"}
 - [WIP]Linux 网络编程与加密 ： [在线阅读](https://archlinuxstudio.github.io/LinuxNetworkProgrammingAndEncryption/#/){:target="\_blank"}
 - [WIP]Linux 命令行与 Shell 脚本教程： [在线阅读](https://archlinuxstudio.github.io/ShellTutorial/#/){:target="\_blank"}
