@@ -15,11 +15,13 @@ import {
   Sidebar,
   Visibility,
 } from 'semantic-ui-react';
+import './homepage_video.css';
 
 interface IProps {}
 
 interface IState {
   fixed: boolean;
+  muteVideo: boolean;
 }
 
 /* Heads up!
@@ -31,10 +33,15 @@ class DesktopContainer extends Component<IProps, IState> {
 
   state = {
     fixed: false,
+    muteVideo: true,
   };
 
   hideFixedMenu = () => this.setState({ fixed: false });
   showFixedMenu = () => this.setState({ fixed: true });
+
+  handleMuteVideoClicked = () => {
+    this.setState({ muteVideo: !this.state.muteVideo });
+  };
 
   componentDidMount = async () => {};
 
@@ -51,7 +58,12 @@ class DesktopContainer extends Component<IProps, IState> {
           <Segment
             inverted
             textAlign="center"
-            style={{ minHeight: 700, padding: '1em 0em' }}
+            style={{
+              minHeight: 700,
+              padding: '1em 0em',
+              display: 'flex',
+              flexDirection: 'column',
+            }}
             vertical
           >
             <Menu
@@ -90,7 +102,24 @@ class DesktopContainer extends Component<IProps, IState> {
                 </Menu.Item>
               </Container>
             </Menu>
-            <HomepageHeading />
+            <div
+              className="homepage-video-wrapper"
+              style={{
+                alignItems: 'center',
+                flex: 1,
+              }}
+            >
+              <video
+                muted={this.state.muteVideo}
+                autoPlay={true}
+                loop={true}
+                playsInline={true}
+                src="https://static.fsf.org/nosvn/FSF30-video/FSF_30_720p.webm"
+              ></video>
+              <div className="header">
+                <HomepageHeading />
+              </div>
+            </div>
           </Segment>
         </Visibility>
 

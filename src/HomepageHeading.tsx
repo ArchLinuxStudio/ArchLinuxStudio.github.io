@@ -41,7 +41,8 @@ class HomepageHeading extends Component<IProps, IState> {
             fontSize: this.props.mobile ? '2em' : '4em',
             fontWeight: 'normal',
             marginBottom: 0,
-            marginTop: this.props.mobile ? '1.5em' : '3em',
+            //mobile has no video
+            marginTop: this.props.mobile ? '1.5em' : '0em',
           }}
         />
         <Header
