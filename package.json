@@ -37,6 +37,7 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build && rm -rf docs && mv build docs",
+    "serve": "serve -s docs -l 4000",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject",
     "postinstall": "semantic-ui-css-patch"

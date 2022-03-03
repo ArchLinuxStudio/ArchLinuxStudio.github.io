@@ -159,9 +159,21 @@ class DesktopContainer extends Component<IProps, IState> {
                 playsInline={true}
                 src="https://static.fsf.org/nosvn/FSF30-video/FSF_30_720p.webm"
               ></video>
+
               <div className="header">
                 <HomepageHeading />
               </div>
+              <Icon
+                name={this.state.muteVideo ? 'volume off' : 'volume up'}
+                size="big"
+                onClick={this.handleMuteVideoClicked}
+                style={{
+                  position: 'absolute',
+                  bottom: 50,
+                  right: 50,
+                  textShadow: '1px 1px 18px rgba(0, 0, 0, 1)',
+                }}
+              />
             </div>
           </Segment>
         </Visibility>
