@@ -25,11 +25,13 @@ interface IState {
 
 class App extends Component<IProps, IState> {
   state = {
-    quotesHeight: 0,
+    quotesHeight: 200,
   };
 
   componentDidMount = async () => {
-    this.getHeaderHight();
+    setTimeout(() => {
+      this.getHeaderHight();
+    }, 300);
   };
 
   //let left and right quote with same height

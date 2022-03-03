@@ -61,7 +61,8 @@ class DesktopContainer extends Component<IProps, IState> {
             textAlign="center"
             style={{
               minHeight: 700,
-              padding: '1em 0em',
+              //no padding below video
+              padding: '0em 0em',
               display: 'flex',
               flexDirection: 'column',
             }}
