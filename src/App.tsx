@@ -32,6 +32,16 @@ class App extends Component<IProps, IState> {
     setTimeout(() => {
       this.getHeaderHight();
     }, 300);
+
+    window.addEventListener('resize', this.resize);
+  };
+
+  resize = () => {
+    this.getHeaderHight();
+  };
+
+  componentWillUnmount = () => {
+    window.removeEventListener('resize', this.resize);
   };
 
   //let left and right quote with same height
