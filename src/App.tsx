@@ -203,7 +203,7 @@ class App extends Component<IProps, IState> {
               Blockchain election react tutorial
             </Header>
             <p style={{ fontSize: '1.33em' }}>
-              Same as abrove, but use react and typescript!
+              Same as above, but use react and typescript!
             </p>
             <Button
               as="a"
