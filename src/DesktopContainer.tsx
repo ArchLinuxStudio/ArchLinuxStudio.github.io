@@ -13,6 +13,7 @@ import {
   Menu,
   Segment,
   Sidebar,
+  Popup,
   Visibility,
 } from 'semantic-ui-react';
 import './homepage_video.css';
@@ -77,9 +78,50 @@ class DesktopContainer extends Component<IProps, IState> {
                 <Menu.Item as="a" active>
                   Home
                 </Menu.Item>
-                <Menu.Item as="a">Placeholder</Menu.Item>
-                <Menu.Item as="a">Placeholder</Menu.Item>
-                <Menu.Item as="a">Placeholder</Menu.Item>
+                <Popup
+                  trigger={
+                    <Menu.Item
+                      as="a"
+                      href="https://archlinuxstudio.github.io/ArchLinuxTutorial/#/"
+                      target="_blank"
+                    >
+                      ALT
+                    </Menu.Item>
+                  }
+                  content="Arch Linux Tutorial"
+                  inverted
+                  on="hover"
+                />
+                <Popup
+                  trigger={
+                    <Menu.Item
+                      as="a"
+                      href="https://archlinuxstudio.github.io/ModernSecurityProtectionGuide/#/"
+                      target="_blank"
+                    >
+                      MPPG
+                    </Menu.Item>
+                  }
+                  content="Modern Privacy Protection Guide"
+                  inverted
+                  on="hover"
+                />
+                <Popup
+                  trigger={
+                    <Menu.Item
+                      as="a"
+                      href="https://archlinuxstudio.github.io/LinuxNetworkProgrammingAndEncryption/#/"
+                      target="_blank"
+                    >
+                      LNPE
+                    </Menu.Item>
+                  }
+                  flowing
+                  content="Linux Network Programming And Encryption "
+                  inverted
+                  on="hover"
+                />
+
                 <Menu.Item position="right">
                   <Button
                     as="a"

@@ -13,16 +13,33 @@ import {
   Segment,
   Sidebar,
 } from 'semantic-ui-react';
-import Kawaii from '#/images/kawaii.jpg';
-import WhiteImages from '#/images/white-image.png';
+import ES from '#/images/ES.webp';
+import JA2 from '#/images/JA2.jpg';
 import RS_GTA from '#/images/RS_GTA1.jpg';
 
 interface IProps {}
 
-interface IState {}
+interface IState {
+  quotesHeight: number;
+}
 
 class App extends Component<IProps, IState> {
-  componentDidMount = async () => {};
+  state = {
+    quotesHeight: 0,
+  };
+
+  componentDidMount = async () => {
+    this.getHeaderHight();
+  };
+
+  //let left and right quote with same height
+  getHeaderHight = async () => {
+    let quote = document.getElementById('quote');
+    let quotesHeight = window
+      .getComputedStyle(quote!)
+      .getPropertyValue('height');
+    this.setState({ quotesHeight: Number(quotesHeight.split('px')[0]) });
+  };
 
   render() {
     return (
@@ -39,13 +56,16 @@ class App extends Component<IProps, IState> {
                   edit, contribute to, and share the software. Thus, free
                   software is a matter of liberty, not price. We have been
                   defending the rights of all software users for the past 5
-                  years. Help sustain us for many more; donate and become an
-                  associate member today.
+                  years. Donate and help sustain us for many more.
                 </p>
                 <Header as="h3" style={{ fontSize: '2em' }}>
-                  Placeholder
+                  Value
                 </Header>
-                <p style={{ fontSize: '1.33em' }}>Placeholder</p>
+                <p style={{ fontSize: '1.33em' }}>
+                  Value your freedom or you will lose it, teaches history.
+                  'Don't bother us with politics', respond those who don't want
+                  to learn.
+                </p>
               </Grid.Column>
               <Grid.Column floated="right" width={7}>
                 <Image bordered rounded size="huge" src={RS_GTA} />
@@ -65,18 +85,57 @@ class App extends Component<IProps, IState> {
           <Grid celled="internally" columns="equal" stackable>
             <Grid.Row textAlign="center">
               <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                <Header as="h3" style={{ fontSize: '2em' }}>
-                  "Placeholder"
+                <Header as="h3" style={{ fontSize: '1.7em' }} id="quote">
+                  "I can't in good conscience allow the U.S. government to
+                  destroy privacy, internet freedom and basic liberties for
+                  people around the world with this massive surveillance machine
+                  they're secretly building. "
                 </Header>
-                <p style={{ fontSize: '1.33em' }}>Placeholder</p>
+                <p
+                  style={{
+                    fontSize: '1.33em',
+                    textShadow: '1px 1px 18px rgba(0, 0, 0, 1)',
+                  }}
+                >
+                  <Image
+                    size="small"
+                    avatar
+                    src={ES}
+                    style={{
+                      boxShadow:
+                        '0 2px 18px rgba(0,0,0,.6),0 2px 18px rgba(0,0,0,.6)',
+                    }}
+                  />
+                  <b>Edward Snowden</b> 2013
+                </p>
               </Grid.Column>
+
               <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                <Header as="h3" style={{ fontSize: '2em' }}>
-                  "Placeholder"
+                <Header
+                  as="h3"
+                  style={{ fontSize: '1.7em', height: this.state.quotesHeight }}
+                >
+                  "Every time we witness an injustice and do not act, we train
+                  our character to be passive in its presence and thereby
+                  eventually lose all ability to defend ourselves and those we
+                  love."
                 </Header>
-                <p style={{ fontSize: '1.33em' }}>
-                  <Image avatar src={WhiteImages} />
-                  <b>Placeholder Who</b> Placeholder
+                <p
+                  style={{
+                    fontSize: '1.33em',
+                    textShadow: '1px 1px 18px rgba(0, 0, 0, 1)',
+                  }}
+                >
+                  <Image
+                    avatar
+                    size="small"
+                    src={JA2}
+                    style={{
+                      boxShadow:
+                        '0 2px 18px rgba(0,0,0,.6),0 2px 18px rgba(0,0,0,.6)',
+                    }}
+                  />
+                  <b>Julian Assange</b> 2007
                 </p>
               </Grid.Column>
             </Grid.Row>

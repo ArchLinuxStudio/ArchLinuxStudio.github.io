@@ -1,11 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.78d3c53f.css",
-    "main.js": "/static/js/main.70f21a60.js",
+    "main.js": "/static/js/main.1654b771.js",
     "static/js/787.18ac4639.chunk.js": "/static/js/787.18ac4639.chunk.js",
+    "static/media/JA2.jpg": "/static/media/JA2.6278ef6361310488766a.jpg",
     "static/media/brand-icons.svg": "/static/media/brand-icons.6729d29753e000c17489.svg",
     "static/media/icons.svg": "/static/media/icons.62d9dae4e0040e81c980.svg",
     "static/media/RS_GTA1.jpg": "/static/media/RS_GTA1.c806e9601cd862416cf4.jpg",
+    "static/media/ES.webp": "/static/media/ES.9f740cba94a2ee7ee505.webp",
     "static/media/outline-icons.svg": "/static/media/outline-icons.9c4845b4b41ef40a22fa.svg",
     "static/media/icons.eot": "/static/media/icons.a01e3f2d6c83dc3aee17.eot",
     "static/media/icons.ttf": "/static/media/icons.c656b8caa454ed19b9a2.ttf",
@@ -22,11 +24,11 @@
     "static/media/outline-icons.woff2": "/static/media/outline-icons.687a4990ea22bb1a49d4.woff2",
     "index.html": "/index.html",
     "main.78d3c53f.css.map": "/static/css/main.78d3c53f.css.map",
-    "main.70f21a60.js.map": "/static/js/main.70f21a60.js.map",
+    "main.1654b771.js.map": "/static/js/main.1654b771.js.map",
     "787.18ac4639.chunk.js.map": "/static/js/787.18ac4639.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.78d3c53f.css",
-    "static/js/main.70f21a60.js"
+    "static/js/main.1654b771.js"
   ]
 }

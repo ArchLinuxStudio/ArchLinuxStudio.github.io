@@ -12,6 +12,7 @@ import {
   List,
   Menu,
   Segment,
+  Popup,
   Sidebar,
 } from 'semantic-ui-react';
 
@@ -52,9 +53,49 @@ class MobileContainer extends Component<IProps, IState> {
             <Menu.Item as="a" active>
               Home
             </Menu.Item>
-            <Menu.Item as="a">Placeholder</Menu.Item>
-            <Menu.Item as="a">Placeholder</Menu.Item>
-            <Menu.Item as="a">Placeholder</Menu.Item>
+            <Popup
+              trigger={
+                <Menu.Item
+                  as="a"
+                  href="https://archlinuxstudio.github.io/ArchLinuxTutorial/#/"
+                  target="_blank"
+                >
+                  ALT
+                </Menu.Item>
+              }
+              content="Arch Linux Tutorial"
+              inverted
+              on="hover"
+            />
+            <Popup
+              trigger={
+                <Menu.Item
+                  as="a"
+                  href="https://archlinuxstudio.github.io/ModernSecurityProtectionGuide/#/"
+                  target="_blank"
+                >
+                  MPPG
+                </Menu.Item>
+              }
+              content="Modern Privacy Protection Guide"
+              inverted
+              on="hover"
+            />
+            <Popup
+              trigger={
+                <Menu.Item
+                  as="a"
+                  href="https://archlinuxstudio.github.io/LinuxNetworkProgrammingAndEncryption/#/"
+                  target="_blank"
+                >
+                  LNPE
+                </Menu.Item>
+              }
+              flowing
+              content="Linux Network Programming And Encryption "
+              inverted
+              on="hover"
+            />
             <Menu.Item as="a">Placeholder_hidden</Menu.Item>
             <Menu.Item as="a">Placeholder_hidden</Menu.Item>
           </Sidebar>

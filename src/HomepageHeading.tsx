@@ -47,7 +47,7 @@ class HomepageHeading extends Component<IProps, IState> {
         />
         <Header
           as="h2"
-          content="Do whatever you want when you want to."
+          content="So it's free as in freedom."
           inverted
           style={{
             fontSize: this.props.mobile ? '1.5em' : '1.7em',
