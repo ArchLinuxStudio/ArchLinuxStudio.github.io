@@ -147,15 +147,24 @@ class App extends Component<IProps, IState> {
         <Segment style={{ padding: '8em 0em' }} vertical>
           <Container text>
             <Header as="h3" style={{ fontSize: '2em' }}>
-              Breaking The Grid, Grabs Your Attention
+              Free Software Movement and Blockchain Tech
             </Header>
             <p style={{ fontSize: '1.33em' }}>
-              Instead of focusing on content creation and hard work, we have
-              learned how to master the art of doing nothing by providing
-              massive amounts of whitespace and generic content that can seem
-              massive, monolithic and worth your attention.
+              For the blockchain, it can be said that it extends the concept of
+              the free software movement to a wider field. Such as finance,
+              social activities, and possibly even the political field in the
+              future. The important concept of decentralization brought by
+              blockchain technology, and the cryptocurrency system that grows on
+              it, have actually created a great threat to traditional powers.
+              Blockchain and its cryptocurrency system are wings, and we believe
+              that the free software movement will have a better future with it.
             </p>
-            <Button as="a" size="large">
+            <Button
+              as="a"
+              href="https://en.wikipedia.org/wiki/Blockchain"
+              target="_blank"
+              size="large"
+            >
               Read More
             </Button>
 
@@ -165,18 +174,44 @@ class App extends Component<IProps, IState> {
               horizontal
               style={{ margin: '3em 0em', textTransform: 'uppercase' }}
             >
-              <a href="#">Case Studies</a>
+              <a
+                href="https://github.com/ArchLinuxStudio?q=blockchain&type=all&language=&sort="
+                target="_blank"
+              >
+                Case Studies
+              </a>
             </Divider>
 
             <Header as="h3" style={{ fontSize: '2em' }}>
-              Did We Tell You About Our Projects?
+              Blockchain election tutorial
             </Header>
             <p style={{ fontSize: '1.33em' }}>
-              Yes I know you probably disregarded the earlier boasts as
-              non-sequitur filler content, but it's really true.
+              A Decentralized Ethereum Voting Application Tutorial. Build your
+              first decentralized application, or Dapp, on the Ethereum Network
+              with this tutorial!
             </p>
-            <Button as="a" size="large">
-              I'm Still Quite Interested
+            <Button
+              as="a"
+              href="https://github.com/ArchLinuxStudio/blockchain-election-sample"
+              target="_blank"
+              size="large"
+            >
+              Learn More
+            </Button>
+
+            <Header as="h3" style={{ fontSize: '2em' }}>
+              Blockchain election react tutorial
+            </Header>
+            <p style={{ fontSize: '1.33em' }}>
+              Same as abrove, but use react and typescript!
+            </p>
+            <Button
+              as="a"
+              href="https://github.com/ArchLinuxStudio/blockchain-election-react"
+              target="_blank"
+              size="large"
+            >
+              Learn More
             </Button>
           </Container>
         </Segment>
