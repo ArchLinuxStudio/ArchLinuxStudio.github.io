@@ -188,24 +188,79 @@ class App extends Component<IProps, IState> {
                 <Grid.Column width={3}>
                   <Header inverted as="h4" content="About" />
                   <List link inverted>
-                    <List.Item as="a">Sitemap</List.Item>
-                    <List.Item as="a">Contact Us</List.Item>
-                    <List.Item as="a">Placeholder</List.Item>
-                    <List.Item as="a">Placeholder</List.Item>
+                    <List.Item
+                      as="a"
+                      href="https://t.me/FSF_Ministry_of_Truth"
+                      target="_blank"
+                    >
+                      <List.Icon name="telegram" />
+                      <List.Content>Telegram</List.Content>
+                    </List.Item>
+
+                    <List.Item
+                      as="a"
+                      href="https://github.com/ArchLinuxStudio"
+                      target="_blank"
+                    >
+                      <List.Icon name="github" />
+                      <List.Content>Github</List.Content>
+                    </List.Item>
+
+                    <List.Item as="a" href="" target="_blank">
+                      <List.Icon name="gitlab" />
+                      <List.Content>Gitlab / Stay tuned</List.Content>
+                    </List.Item>
+
+                    <List.Item
+                      as="a"
+                      href="https://www.youtube.com/channel/UCVO7lXKucA6z3O37WV7FG5w"
+                      target="_blank"
+                    >
+                      <List.Icon name="youtube play" />
+                      <List.Content>Youtube</List.Content>
+                    </List.Item>
+
+                    <List.Item as="a" href="" target="_blank">
+                      <List.Icon name="chat" />
+                      <List.Content>[Matrix] / coming soon</List.Content>
+                    </List.Item>
                   </List>
                 </Grid.Column>
                 <Grid.Column width={3}>
-                  <Header inverted as="h4" content="Services" />
+                  <Header inverted as="h4" content="Cooperation Service" />
                   <List link inverted>
-                    <List.Item as="a">FAQ</List.Item>
-                    <List.Item as="a">How To Access</List.Item>
+                    <List.Item
+                      as="a"
+                      href="https://ss.cn88.net/#/register?code=wH0Pr5l8"
+                      target="_blank"
+                    >
+                      <List.Icon name="plane" />
+                      <List.Content>White Moonlight AirLine</List.Content>
+                    </List.Item>
+                    <List.Item as="a" href="" target="_blank">
+                      <List.Icon name="plane" />
+                      <List.Content>Matrix AirLine / Stay tuned</List.Content>
+                    </List.Item>
+                    <List.Item as="a" href="" target="_blank">
+                      <List.Icon name="google" />
+                      <List.Content>
+                        Google Voice Account / Stay tuned
+                      </List.Content>
+                    </List.Item>
                   </List>
                 </Grid.Column>
                 <Grid.Column width={7}>
                   <Header as="h4" inverted>
-                    Footer Header
+                    Free As In Freedom
                   </Header>
-                  <p>Placeholder</p>
+                  <p>
+                    Free software is software that respects your freedom and the
+                    social solidarity of your community. So it's free as in
+                    freedom.
+                  </p>
+                  <p>
+                    Copyright © 2017-2022 ArchLinuxStudio, All Rights Reversed.
+                  </p>
                 </Grid.Column>
               </Grid.Row>
             </Grid>
