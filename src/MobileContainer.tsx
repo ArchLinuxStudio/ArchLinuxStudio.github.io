@@ -38,8 +38,6 @@ class MobileContainer extends Component<IProps, IState> {
     const { children } = this.props;
     const { sidebarOpened } = this.state;
     return (
-      //TODO the "as" seems useless
-      // <Media as={Sidebar.Pushable} at="mobile">
       <Media at="mobile">
         <Sidebar.Pushable>
           <Sidebar
