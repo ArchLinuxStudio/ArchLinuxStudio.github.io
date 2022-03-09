@@ -162,8 +162,8 @@ class MobileContainer extends Component<IProps, IState> {
               {children}
             </Sidebar.Pusher>
           </Sidebar.Pushable>
+          <SemanticToastContainer position="bottom-left" />
         </Media>
-        <SemanticToastContainer position="bottom-left" />
       </CustomRouter>
     );
   }
