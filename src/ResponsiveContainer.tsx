@@ -29,11 +29,6 @@ class ResponsiveContainer extends Component<IProps, IState> {
   static defaultProps = {};
 
   state = {};
-  handleSidebarHide = () => this.setState({ sidebarOpened: false });
-
-  handleToggle = () => this.setState({ sidebarOpened: true });
-
-  componentDidMount = async () => {};
 
   render() {
     return (

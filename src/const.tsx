@@ -1,4 +1,5 @@
 import { createMedia } from '@artsy/fresnel';
+import { createBrowserHistory } from 'history';
 
 export const { MediaContextProvider, Media } = createMedia({
   breakpoints: {
@@ -7,3 +8,5 @@ export const { MediaContextProvider, Media } = createMedia({
     computer: 1024,
   },
 });
+
+export const history = createBrowserHistory();
