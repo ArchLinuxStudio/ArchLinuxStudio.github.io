@@ -99,7 +99,6 @@ class MobileContainer extends Component<IProps, IState> {
                     as="a"
                     href="https://archlinuxstudio.github.io/ArchLinuxTutorial/#/"
                     target="_blank"
-                    active={this.state.activeItem === homePathName}
                   >
                     ALT
                   </Menu.Item>

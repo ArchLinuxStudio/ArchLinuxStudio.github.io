@@ -1,5 +1,5 @@
 import { createMedia } from '@artsy/fresnel';
-import { createBrowserHistory } from 'history';
+import { createHashHistory } from 'history';
 
 export const { MediaContextProvider, Media } = createMedia({
   breakpoints: {
@@ -9,7 +9,7 @@ export const { MediaContextProvider, Media } = createMedia({
   },
 });
 
-export const history = createBrowserHistory();
+export const history = createHashHistory();
 
 export const homePathName = '/home';
 export const blogListPathName = '/blog_list';

@@ -43,7 +43,8 @@ class DesktopContainer extends Component<IProps, IState> {
   showFixedMenu = () => this.setState({ fixed: true });
 
   componentDidMount = async () => {
-    let pathname = window.location.pathname;
+    let pathname = window.location.hash;
+
     if (pathname.length > 1) {
       this.setState({
         activeItem: pathname,
