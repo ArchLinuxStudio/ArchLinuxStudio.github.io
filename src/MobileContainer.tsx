@@ -1,7 +1,7 @@
 import { Component } from 'react';
 
 import {
-  blogListPathName,
+  productListPathName,
   foundationPathName,
   homePathName,
   Media,
@@ -41,8 +41,9 @@ class MobileContainer extends Component<IProps, IState> {
   handleToggle = () => this.setState({ sidebarOpened: true });
 
   componentDidMount = async () => {
-    let pathname = window.location.pathname;
+    let pathname = window.location.hash;
     if (pathname.length > 1) {
+      pathname = pathname.split('#')[1];
       this.setState({
         activeItem: pathname,
       });
@@ -137,13 +138,12 @@ class MobileContainer extends Component<IProps, IState> {
                 on="hover"
               />
               <Menu.Item
-                name={blogListPathName}
+                name={productListPathName}
                 onClick={this.handleMenuItemClick}
-                active={this.state.activeItem === blogListPathName}
+                active={this.state.activeItem === productListPathName}
               >
-                BLOG
+                Products
               </Menu.Item>
-              <Menu.Item as="a">Placeholder_hidden</Menu.Item>
             </Sidebar>
 
             <Sidebar.Pusher dimmed={sidebarOpened}>

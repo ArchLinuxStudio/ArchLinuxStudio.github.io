@@ -1,17 +1,5 @@
-import React, { Component } from 'react';
-import {
-  Button,
-  Container,
-  Divider,
-  Grid,
-  Header,
-  Icon,
-  Image,
-  List,
-  Menu,
-  Segment,
-  Sidebar,
-} from 'semantic-ui-react';
+import { Component } from 'react';
+import { Button, Container, Header, Icon } from 'semantic-ui-react';
 
 interface IProps {
   mobile: boolean;

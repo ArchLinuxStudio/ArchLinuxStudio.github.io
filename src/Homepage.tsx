@@ -133,7 +133,12 @@ class Homepage extends Component<IProps, IState> {
             </Grid.Row>
             <Grid.Row>
               <Grid.Column textAlign="center">
-                <Button href="https://www.fsf.org/" target="_blank" size="huge">
+                <Button
+                  href="https://www.fsf.org/"
+                  target="_blank"
+                  size="huge"
+                  color="teal"
+                >
                   Check Them Out
                 </Button>
               </Grid.Column>
@@ -223,6 +228,7 @@ class Homepage extends Component<IProps, IState> {
               target="_blank"
               size="large"
               rel="noreferrer"
+              color="teal"
             >
               Read More
             </Button>
@@ -231,7 +237,10 @@ class Homepage extends Component<IProps, IState> {
               as="h4"
               className="header"
               horizontal
-              style={{ margin: '3em 0em', textTransform: 'uppercase' }}
+              style={{
+                margin: '3em 0em',
+                textTransform: 'uppercase',
+              }}
             >
               <a
                 href="https://github.com/ArchLinuxStudio?q=blockchain&type=all&language=&sort="
@@ -255,6 +264,7 @@ class Homepage extends Component<IProps, IState> {
               href="https://github.com/ArchLinuxStudio/blockchain-election-sample"
               target="_blank"
               size="large"
+              color="teal"
             >
               Learn More
             </Button>
@@ -270,6 +280,7 @@ class Homepage extends Component<IProps, IState> {
               href="https://github.com/ArchLinuxStudio/blockchain-election-react"
               target="_blank"
               size="large"
+              color="teal"
             >
               Learn More
             </Button>

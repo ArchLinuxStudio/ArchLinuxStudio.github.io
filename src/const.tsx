@@ -12,5 +12,5 @@ export const { MediaContextProvider, Media } = createMedia({
 export const history = createHashHistory();
 
 export const homePathName = '/home';
-export const blogListPathName = '/blog_list';
+export const productListPathName = '/product_list';
 export const foundationPathName = '/foundation';

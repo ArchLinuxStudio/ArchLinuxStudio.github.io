@@ -20,8 +20,8 @@ class Foundation extends Component<IProps, IState> {
     return (
       <div style={{ minHeight: '80vh' }}>
         <Segment style={{ padding: '6em 0em' }} vertical>
-          <Container text>
-            <Header as="h1" style={{ fontSize: '2.3em' }}>
+          <Container>
+            <Header as="h1" style={{ fontSize: '2.3em' }} textAlign="center">
               Sustainable Support for ArchLinuxStudio
             </Header>
             <p style={{ fontSize: '1.33em', padding: '1em 0em 0em 0em' }}>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  blogListPathName,
+  productListPathName,
   foundationPathName,
   homePathName,
   Media,
@@ -17,7 +17,6 @@ import {
 import CustomRouter from '#/CustomRouter';
 import { history } from '#/const';
 import { scrollToTopAndRoute } from '#/utils';
-
 interface IProps {}
 
 interface IState {
@@ -46,6 +45,7 @@ class DesktopContainer extends Component<IProps, IState> {
     let pathname = window.location.hash;
 
     if (pathname.length > 1) {
+      pathname = pathname.split('#')[1];
       this.setState({
         activeItem: pathname,
       });
@@ -142,11 +142,11 @@ class DesktopContainer extends Component<IProps, IState> {
                     on="hover"
                   />
                   <Menu.Item
-                    name={blogListPathName}
+                    name={productListPathName}
                     onClick={this.handleMenuItemClick}
-                    active={this.state.activeItem === blogListPathName}
+                    active={this.state.activeItem === productListPathName}
                   >
-                    BLOG
+                    PRODUCTS
                   </Menu.Item>
 
                   <Menu.Item
