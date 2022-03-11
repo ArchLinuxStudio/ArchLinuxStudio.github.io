@@ -1,32 +1,27 @@
 import React, { Component } from 'react';
-import HomepageHeading from '#/HomepageHeading';
-import { Media } from '#/const';
+import {
+  blogListPathName,
+  foundationPathName,
+  homePathName,
+  Media,
+} from '#/const';
 import {
   Button,
   Container,
-  Divider,
-  Grid,
-  Header,
-  Icon,
-  Image,
-  List,
   Menu,
   Segment,
-  Sidebar,
   Popup,
   Visibility,
+  MenuItemProps,
 } from 'semantic-ui-react';
-import { Route } from 'react-router';
-import { Router, Routes } from 'react-router-dom';
 import CustomRouter from '#/CustomRouter';
 import { history } from '#/const';
 import { scrollToTopAndRoute } from '#/utils';
-import Homepage from '#/Homepage';
-import Blog from '#/Blog';
 
 interface IProps {}
 
 interface IState {
+  activeItem: string;
   fixed: boolean;
   muteVideo: boolean;
 }
@@ -39,6 +34,7 @@ class DesktopContainer extends Component<IProps, IState> {
   static defaultProps = {};
 
   state = {
+    activeItem: homePathName,
     fixed: false,
     muteVideo: true,
   };
@@ -46,11 +42,22 @@ class DesktopContainer extends Component<IProps, IState> {
   hideFixedMenu = () => this.setState({ fixed: false });
   showFixedMenu = () => this.setState({ fixed: true });
 
-  handleMuteVideoClicked = () => {
-    this.setState({ muteVideo: !this.state.muteVideo });
+  componentDidMount = async () => {
+    let pathname = window.location.pathname;
+    if (pathname.length > 1) {
+      this.setState({
+        activeItem: pathname,
+      });
+    }
   };
 
-  componentDidMount = async () => {};
+  handleMenuItemClick = (
+    event: React.MouseEvent<HTMLElement>,
+    menuItemProps: MenuItemProps
+  ) => {
+    this.setState({ activeItem: menuItemProps.name! });
+    scrollToTopAndRoute(menuItemProps.name!);
+  };
 
   render() {
     const { children } = this.props;
@@ -83,7 +90,11 @@ class DesktopContainer extends Component<IProps, IState> {
                 size="large"
               >
                 <Container>
-                  <Menu.Item as="a" href="/" active>
+                  <Menu.Item
+                    as="a"
+                    href="/"
+                    active={this.state.activeItem === homePathName}
+                  >
                     Home
                   </Menu.Item>
                   <Popup
@@ -129,15 +140,21 @@ class DesktopContainer extends Component<IProps, IState> {
                     inverted
                     on="hover"
                   />
-                  <Menu.Item onClick={() => scrollToTopAndRoute('/blog_list')}>
+                  <Menu.Item
+                    name={blogListPathName}
+                    onClick={this.handleMenuItemClick}
+                    active={this.state.activeItem === blogListPathName}
+                  >
                     BLOG
                   </Menu.Item>
 
-                  <Menu.Item position="right">
-                    <Button
-                      onClick={() => scrollToTopAndRoute('/foundation')}
-                      inverted={!fixed}
-                    >
+                  <Menu.Item
+                    position="right"
+                    name={foundationPathName}
+                    active={this.state.activeItem === foundationPathName}
+                    onClick={this.handleMenuItemClick}
+                  >
+                    <Button inverted={!fixed}>
                       ArchLinuxStudio Foundation
                     </Button>
                   </Menu.Item>

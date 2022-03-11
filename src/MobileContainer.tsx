@@ -1,33 +1,31 @@
-import React, { Component } from 'react';
-import HomepageHeading from '#/HomepageHeading';
-import { Media } from '#/const';
+import { Component } from 'react';
+
+import {
+  blogListPathName,
+  foundationPathName,
+  homePathName,
+  Media,
+} from '#/const';
 import CustomRouter from '#/CustomRouter';
 import { SemanticToastContainer, toast } from 'react-semantic-toasts';
 
 import {
   Button,
   Container,
-  Divider,
-  Grid,
-  Header,
   Icon,
-  Image,
-  List,
   Menu,
   Segment,
   Popup,
   Sidebar,
+  MenuItemProps,
 } from 'semantic-ui-react';
 import { history } from '#/const';
 import { scrollToTopAndRoute } from '#/utils';
-import Homepage from '#/Homepage';
-import Blog from '#/Blog';
-import { Route } from 'react-router';
-import { Router, Routes } from 'react-router-dom';
 
 interface IProps {}
 
 interface IState {
+  activeItem: string;
   sidebarOpened: boolean;
 }
 
@@ -35,6 +33,7 @@ class MobileContainer extends Component<IProps, IState> {
   static defaultProps = {};
 
   state = {
+    activeItem: homePathName,
     sidebarOpened: false,
   };
   handleSidebarHide = () => this.setState({ sidebarOpened: false });
@@ -42,6 +41,13 @@ class MobileContainer extends Component<IProps, IState> {
   handleToggle = () => this.setState({ sidebarOpened: true });
 
   componentDidMount = async () => {
+    let pathname = window.location.pathname;
+    if (pathname.length > 1) {
+      this.setState({
+        activeItem: pathname,
+      });
+    }
+
     setTimeout(() => {
       toast(
         {
@@ -55,6 +61,14 @@ class MobileContainer extends Component<IProps, IState> {
         () => console.log('toast dismissed')
       );
     }, 500);
+  };
+
+  handleMenuItemClick = (
+    event: React.MouseEvent<HTMLElement>,
+    menuItemProps: MenuItemProps
+  ) => {
+    this.setState({ activeItem: menuItemProps.name!, sidebarOpened: false });
+    scrollToTopAndRoute(menuItemProps.name!);
   };
 
   render() {
@@ -72,7 +86,11 @@ class MobileContainer extends Component<IProps, IState> {
               vertical
               visible={sidebarOpened}
             >
-              <Menu.Item as="a" href="/" active>
+              <Menu.Item
+                as="a"
+                href="/"
+                active={this.state.activeItem === homePathName}
+              >
                 Home
               </Menu.Item>
               <Popup
@@ -81,6 +99,7 @@ class MobileContainer extends Component<IProps, IState> {
                     as="a"
                     href="https://archlinuxstudio.github.io/ArchLinuxTutorial/#/"
                     target="_blank"
+                    active={this.state.activeItem === homePathName}
                   >
                     ALT
                   </Menu.Item>
@@ -118,7 +137,11 @@ class MobileContainer extends Component<IProps, IState> {
                 inverted
                 on="hover"
               />
-              <Menu.Item onClick={() => scrollToTopAndRoute('/blog_list')}>
+              <Menu.Item
+                name={blogListPathName}
+                onClick={this.handleMenuItemClick}
+                active={this.state.activeItem === blogListPathName}
+              >
                 BLOG
               </Menu.Item>
               <Menu.Item as="a">Placeholder_hidden</Menu.Item>
@@ -136,24 +159,13 @@ class MobileContainer extends Component<IProps, IState> {
                     <Menu.Item onClick={this.handleToggle}>
                       <Icon name="sidebar" />
                     </Menu.Item>
-                    <Menu.Item position="right">
-                      <Button
-                        as="a"
-                        href="https://en.cryptobadges.io/donate/1Lth3oca4WnMnTnwHBcDLkEqniA2pBxkeC"
-                        target="_blank"
-                        inverted
-                      >
-                        Donate BTC
-                      </Button>
-                      <Button
-                        as="a"
-                        href="https://en.cryptobadges.io/donate/0x5A218a8d570d9947f42e0a4916ece7a60A181c2d"
-                        target="_blank"
-                        inverted
-                        style={{ marginLeft: '0.5em' }}
-                      >
-                        Donate ETH
-                      </Button>
+                    <Menu.Item
+                      position="right"
+                      name={foundationPathName}
+                      onClick={this.handleMenuItemClick}
+                      active={this.state.activeItem === foundationPathName}
+                    >
+                      <Button inverted>ArchLinuxStudio Foundation</Button>
                     </Menu.Item>
                   </Menu>
                 </Container>

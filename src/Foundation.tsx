@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import {
   Button,
   Container,
@@ -6,11 +6,7 @@ import {
   Grid,
   Header,
   Icon,
-  Image,
-  List,
-  Menu,
   Segment,
-  Sidebar,
 } from 'semantic-ui-react';
 
 interface IProps {}

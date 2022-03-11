@@ -1,24 +1,13 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import ResponsiveContainer from '#/ResponsiveContainer';
-import {
-  Button,
-  Container,
-  Divider,
-  Grid,
-  Header,
-  Icon,
-  Image,
-  List,
-  Menu,
-  Segment,
-  Sidebar,
-} from 'semantic-ui-react';
+
 import Footer from '#/Footer';
 import Homepage from './Homepage';
 import { Route } from 'react-router';
-import { Router, Routes } from 'react-router-dom';
+import { Routes } from 'react-router-dom';
 import Blog from './Blog';
 import Foundation from './Foundation';
+import { foundationPathName, blogListPathName } from './const';
 interface IProps {}
 
 interface IState {}
@@ -33,8 +22,8 @@ class App extends Component<IProps, IState> {
       <>
         <ResponsiveContainer>
           <Routes>
-            <Route path="/foundation" element={<Foundation />}></Route>
-            <Route path="/blog_list" element={<Blog />}></Route>
+            <Route path={foundationPathName} element={<Foundation />}></Route>
+            <Route path={blogListPathName} element={<Blog />}></Route>
             <Route path="/" element={<Homepage />}></Route>
           </Routes>
         </ResponsiveContainer>

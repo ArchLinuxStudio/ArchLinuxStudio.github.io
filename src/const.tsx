@@ -10,3 +10,7 @@ export const { MediaContextProvider, Media } = createMedia({
 });
 
 export const history = createBrowserHistory();
+
+export const homePathName = '/home';
+export const blogListPathName = '/blog_list';
+export const foundationPathName = '/foundation';

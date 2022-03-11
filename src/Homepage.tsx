@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import {
   Button,
   Container,
@@ -7,10 +7,7 @@ import {
   Header,
   Icon,
   Image,
-  List,
-  Menu,
   Segment,
-  Sidebar,
 } from 'semantic-ui-react';
 
 import ES from '#/images/ES.webp';
@@ -19,6 +16,7 @@ import RS_GTA from '#/images/RS_GTA1.jpg';
 import HomepageHeading from '#/HomepageHeading';
 import './homepage_video.css';
 import Loading from '#/images/loading.gif';
+import FSF30 from '#/videos/FSF_30_720p.webm';
 
 interface IProps {}
 
@@ -85,7 +83,7 @@ class Homepage extends Component<IProps, IState> {
             autoPlay={true}
             loop={true}
             playsInline={true}
-            src="https://static.fsf.org/nosvn/FSF30-video/FSF_30_720p.webm"
+            src={FSF30}
             poster={Loading}
           ></video>
 
@@ -224,6 +222,7 @@ class Homepage extends Component<IProps, IState> {
               href="https://en.wikipedia.org/wiki/Blockchain"
               target="_blank"
               size="large"
+              rel="noreferrer"
             >
               Read More
             </Button>
@@ -237,6 +236,7 @@ class Homepage extends Component<IProps, IState> {
               <a
                 href="https://github.com/ArchLinuxStudio?q=blockchain&type=all&language=&sort="
                 target="_blank"
+                rel="noreferrer"
               >
                 Case Studies
               </a>
