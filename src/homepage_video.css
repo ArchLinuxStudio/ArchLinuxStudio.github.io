@@ -1,0 +1,36 @@
+.homepage-video-wrapper {
+  /* Telling our absolute positioned video to 
+    be relative to this element */
+  position: relative;
+
+  /* width: 400px;
+  height: 200px; */
+
+  /* Will not allow the video to overflow the 
+    container */
+  overflow: hidden;
+
+  /* Centering the container's content vertically 
+    and horizontally */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepage-video-wrapper video {
+  /** Simulationg background-size: cover */
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.homepage-video-wrapper .header {
+  position: relative;
+  color: white;
+  text-shadow: 1px 1px 18px rgba(0, 0, 0, 1);
+}

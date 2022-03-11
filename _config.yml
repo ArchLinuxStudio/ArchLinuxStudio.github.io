@@ -1,8 +1,0 @@
-theme: jekyll-theme-merlot
-plugins:
-  - jekyll-seo-tag
-title: ArchLinuxStudio
-twitter:
-  username: benbalter
-  card: summary
-  image: https://avatars.githubusercontent.com/u/17615884?s=400&amp;v=4
