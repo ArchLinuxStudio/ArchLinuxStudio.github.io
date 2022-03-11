@@ -60,7 +60,7 @@ class Foundation extends Component<IProps, IState> {
             <Grid columns={4} doubling>
               <Grid.Column>
                 <Button
-                  color="orange"
+                  style={{ backgroundColor: '#f7931a', color: 'white' }}
                   as="a"
                   href="https://en.cryptobadges.io/donate/1Lth3oca4WnMnTnwHBcDLkEqniA2pBxkeC"
                   target="_blank"
@@ -71,7 +71,7 @@ class Foundation extends Component<IProps, IState> {
               </Grid.Column>
               <Grid.Column>
                 <Button
-                  color="violet"
+                  style={{ backgroundColor: '#151c2f', color: 'white' }}
                   as="a"
                   href="https://en.cryptobadges.io/donate/0x5A218a8d570d9947f42e0a4916ece7a60A181c2d"
                   target="_blank"
