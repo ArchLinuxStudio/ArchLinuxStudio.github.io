@@ -101,7 +101,8 @@ class Footer extends Component<IProps, IState> {
                 <p>
                   Free software is software that respects your freedom and the
                   social solidarity of your community. So it's free as in
-                  freedom.
+                  freedom. This website does not use cookies nor collect
+                  personal data.
                 </p>
                 <p>
                   Copyright © 2017-2022 ArchLinuxStudio, All Rights Reversed.

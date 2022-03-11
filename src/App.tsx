@@ -18,6 +18,7 @@ import Homepage from './Homepage';
 import { Route } from 'react-router';
 import { Router, Routes } from 'react-router-dom';
 import Blog from './Blog';
+import Foundation from './Foundation';
 interface IProps {}
 
 interface IState {}
@@ -32,6 +33,7 @@ class App extends Component<IProps, IState> {
       <>
         <ResponsiveContainer>
           <Routes>
+            <Route path="/foundation" element={<Foundation />}></Route>
             <Route path="/blog_list" element={<Blog />}></Route>
             <Route path="/" element={<Homepage />}></Route>
           </Routes>

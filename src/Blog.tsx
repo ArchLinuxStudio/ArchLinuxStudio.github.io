@@ -21,7 +21,9 @@ class Blog extends Component<IProps, IState> {
   static defaultProps = {};
 
   render() {
-    return <div style={{ minHeight: '80vh' }}>'Blog test'</div>;
+    return (
+      <div style={{ minHeight: '80vh' }}>Ops, still under development.</div>
+    );
   }
 }
 

@@ -135,22 +135,10 @@ class DesktopContainer extends Component<IProps, IState> {
 
                   <Menu.Item position="right">
                     <Button
-                      as="a"
-                      href="https://en.cryptobadges.io/donate/1Lth3oca4WnMnTnwHBcDLkEqniA2pBxkeC"
-                      target="_blank"
+                      onClick={() => scrollToTopAndRoute('/foundation')}
                       inverted={!fixed}
                     >
-                      Donate BTC
-                    </Button>
-                    <Button
-                      as="a"
-                      href="https://en.cryptobadges.io/donate/0x5A218a8d570d9947f42e0a4916ece7a60A181c2d"
-                      target="_blank"
-                      inverted={!fixed}
-                      primary={fixed}
-                      style={{ marginLeft: '0.5em' }}
-                    >
-                      Donate ETH
+                      ArchLinuxStudio Foundation
                     </Button>
                   </Menu.Item>
                 </Container>
