@@ -7,6 +7,7 @@ import {
   Header,
   Icon,
   Segment,
+  Popup,
 } from 'semantic-ui-react';
 
 interface IProps {}
@@ -55,9 +56,30 @@ class Foundation extends Component<IProps, IState> {
               cryptocurrency directly by clicking the button below. After that,
               you can email us(archlinuxstudio@tutamail.com) the donation
               information, along with any personal or company information you
-              need to featured on our website.
+              need to featured on our website. If you don't want to leave any
+              information, you can donate via Monero, and we send our best
+              wishes to every anonymous donor.
             </p>
-            <Grid columns={4} doubling>
+            <Grid columns={5} doubling>
+              <Grid.Column>
+                <Popup
+                  content="4BHubj5tQ9mab6ma54HGyU3iJvVKEGrzNCKG5K2wQZzELXo1o6qoMwJQMF3x6qpPi63fPcVV7jw6g7FhYpcifbDmRzaUAmt"
+                  on="click"
+                  pinned
+                  trigger={
+                    <Button
+                      style={{
+                        backgroundColor: '#ff6600',
+                        color: 'white',
+                        width: '100%',
+                      }}
+                      content="Button"
+                    >
+                      <Icon name="money bill alternate"></Icon>Donate XMR
+                    </Button>
+                  }
+                />
+              </Grid.Column>
               <Grid.Column>
                 <Button
                   style={{ backgroundColor: '#f7931a', color: 'white' }}
@@ -88,7 +110,7 @@ class Foundation extends Component<IProps, IState> {
                   target="_blank"
                   fluid
                 >
-                  <Icon name="ethereum"></Icon>Donate LTC
+                  <Icon name="italic"></Icon>Donate LTC
                 </Button>
               </Grid.Column>
               <Grid.Column>
