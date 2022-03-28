@@ -1,17 +1,5 @@
 import React, { Component } from 'react';
-import {
-  Button,
-  Container,
-  Divider,
-  Grid,
-  Header,
-  Icon,
-  Image,
-  List,
-  Menu,
-  Segment,
-  Sidebar,
-} from 'semantic-ui-react';
+import { Container, Grid, Header, List, Segment } from 'semantic-ui-react';
 
 interface IProps {}
 
@@ -33,6 +21,14 @@ class Footer extends Component<IProps, IState> {
               <Grid.Column width={3}>
                 <Header inverted as="h4" content="About" />
                 <List link inverted>
+                  <List.Item
+                    as="a"
+                    href="https://matrix.to/#/#ArchLinuxStudio:matrix.org"
+                    target="_blank"
+                  >
+                    <List.Icon name="chat" />
+                    <List.Content>[Matrix]</List.Content>
+                  </List.Item>
                   <List.Item
                     as="a"
                     href="https://t.me/FSF_Ministry_of_Truth"
@@ -63,11 +59,6 @@ class Footer extends Component<IProps, IState> {
                   >
                     <List.Icon name="youtube play" />
                     <List.Content>Youtube</List.Content>
-                  </List.Item>
-
-                  <List.Item as="a" href="" target="_blank">
-                    <List.Icon name="chat" />
-                    <List.Content>[Matrix] / coming soon</List.Content>
                   </List.Item>
                 </List>
               </Grid.Column>
