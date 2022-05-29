@@ -65,14 +65,6 @@ class Footer extends Component<IProps, IState> {
               <Grid.Column width={3}>
                 <Header inverted as="h4" content="Cooperation Service" />
                 <List link inverted>
-                  <List.Item
-                    as="a"
-                    href="https://ss.cn88.net/#/register?code=wH0Pr5l8"
-                    target="_blank"
-                  >
-                    <List.Icon name="plane" />
-                    <List.Content>White Moonlight AirLine</List.Content>
-                  </List.Item>
                   <List.Item as="a" href="" target="_blank">
                     <List.Icon name="plane" />
                     <List.Content>Matrix AirLine / Stay tuned</List.Content>
