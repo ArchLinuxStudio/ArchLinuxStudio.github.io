@@ -65,15 +65,17 @@ class Footer extends Component<IProps, IState> {
               <Grid.Column width={3}>
                 <Header inverted as="h4" content="Cooperation Service" />
                 <List link inverted>
-                  <List.Item as="a" href="" target="_blank">
+                  <List.Item
+                    as="a"
+                    href="https://www.glados.one/landing/9FMKX-GYLMK-ZYIZW-5U3T0"
+                    target="_blank"
+                  >
                     <List.Icon name="plane" />
-                    <List.Content>Matrix AirLine / Stay tuned</List.Content>
+                    <List.Content>GLaDOS AirLine</List.Content>
                   </List.Item>
-                  <List.Item as="a" href="" target="_blank">
+                  <List.Item as="a" href="https://t.me/LI_Li_C" target="_blank">
                     <List.Icon name="google" />
-                    <List.Content>
-                      Google Voice Account / Stay tuned
-                    </List.Content>
+                    <List.Content>Google Voice Account</List.Content>
                   </List.Item>
                 </List>
               </Grid.Column>
