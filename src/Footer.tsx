@@ -73,7 +73,7 @@ class Footer extends Component<IProps, IState> {
                     <List.Icon name="plane" />
                     <List.Content>GLaDOS AirLine</List.Content>
                   </List.Item>
-                  <List.Item as="a" href="https://t.me/LI_Li_C" target="_blank">
+                  <List.Item as="a" href="https://t.me/LLC_XMR" target="_blank">
                     <List.Icon name="google" />
                     <List.Content>Google Voice Account</List.Content>
                   </List.Item>
