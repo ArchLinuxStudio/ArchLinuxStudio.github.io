@@ -137,7 +137,10 @@ class Homepage extends Component<IProps, IState> {
                   href="https://www.fsf.org/"
                   target="_blank"
                   size="huge"
-                  color="teal"
+                  style={{
+                    color: '#F8F5D6',
+                    backgroundColor: '#80D1C8',
+                  }}
                 >
                   Check Them Out
                 </Button>
@@ -228,7 +231,10 @@ class Homepage extends Component<IProps, IState> {
               target="_blank"
               size="large"
               rel="noreferrer"
-              color="teal"
+              style={{
+                color: '#F8F5D6',
+                backgroundColor: '#80D1C8',
+              }}
             >
               Read More
             </Button>
@@ -264,7 +270,10 @@ class Homepage extends Component<IProps, IState> {
               href="https://github.com/ArchLinuxStudio/blockchain-election-sample"
               target="_blank"
               size="large"
-              color="teal"
+              style={{
+                color: '#F8F5D6',
+                backgroundColor: '#80D1C8',
+              }}
             >
               Learn More
             </Button>
@@ -280,7 +289,10 @@ class Homepage extends Component<IProps, IState> {
               href="https://github.com/ArchLinuxStudio/blockchain-election-react"
               target="_blank"
               size="large"
-              color="teal"
+              style={{
+                color: '#F8F5D6',
+                backgroundColor: '#80D1C8',
+              }}
             >
               Learn More
             </Button>

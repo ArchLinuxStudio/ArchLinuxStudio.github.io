@@ -48,6 +48,10 @@ class HomepageHeading extends Component<IProps, IState> {
           target="_blank"
           primary
           size="huge"
+          style={{
+            color: '#F8F5D6',
+            backgroundColor: '#80D1C8',
+          }}
         >
           Github
           <Icon name="arrow right" />
