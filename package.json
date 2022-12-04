@@ -39,7 +39,7 @@
   },
   "scripts": {
     "start": "react-app-rewired --openssl-legacy-provider start",
-    "build": "react-app-rewired build && rm -rf docs && mv build docs",
+    "build": "react-app-rewired --openssl-legacy-provider build && rm -rf docs && mv build docs",
     "serve": "serve -s docs -l 4000",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject",
