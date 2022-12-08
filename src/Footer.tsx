@@ -67,11 +67,19 @@ class Footer extends Component<IProps, IState> {
                 <List link inverted>
                   <List.Item
                     as="a"
-                    href="https://www.glados.one/landing/9FMKX-GYLMK-ZYIZW-5U3T0"
+                    href="https://www.glados.rocks/landing/9FMKX-GYLMK-ZYIZW-5U3T0"
                     target="_blank"
                   >
                     <List.Icon name="plane" />
                     <List.Content>GLaDOS AirLine</List.Content>
+                  </List.Item>
+                  <List.Item
+                    as="a"
+                    href="https://www.foxiyun.com/#/register?code=vxZVz57U"
+                    target="_blank"
+                  >
+                    <List.Icon name="plane" />
+                    <List.Content>Foxi Cloud AirLine</List.Content>
                   </List.Item>
                   <List.Item as="a" href="https://t.me/LLC_XMR" target="_blank">
                     <List.Icon name="google" />
