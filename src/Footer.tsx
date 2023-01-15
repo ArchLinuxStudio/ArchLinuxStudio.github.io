@@ -75,7 +75,7 @@ class Footer extends Component<IProps, IState> {
                   </List.Item>
                   <List.Item
                     as="a"
-                    href="https://www.foxiyun.com/#/register?code=ORseGv8L"
+                    href="https://www.foxiyun.com/#/register?code=9xH3B8Mn"
                     target="_blank"
                   >
                     <List.Icon name="plane" />
