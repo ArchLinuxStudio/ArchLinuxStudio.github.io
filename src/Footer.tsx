@@ -90,7 +90,7 @@ class Footer extends Component<IProps, IState> {
                   personal data.
                 </p>
                 <p>
-                  Copyright © 2017-2022 ArchLinuxStudio, All Rights Reversed.
+                  Copyright © 2017-2023 ArchLinuxStudio, All Rights Reversed.
                 </p>
               </Grid.Column>
             </Grid.Row>
