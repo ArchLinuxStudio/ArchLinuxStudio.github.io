@@ -77,6 +77,14 @@ class Footer extends Component<IProps, IState> {
                     <List.Icon name="google" />
                     <List.Content>Google Voice Account</List.Content>
                   </List.Item>
+                  <List.Item
+                    as="a"
+                    href="https://dydx.exchange/r/MXMIIPVY"
+                    target="_blank"
+                  >
+                    <List.Icon name="bitcoin" />
+                    <List.Content>DYDX Exchange</List.Content>
+                  </List.Item>
                 </List>
               </Grid.Column>
               <Grid.Column width={7}>
