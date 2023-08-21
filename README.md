@@ -8,9 +8,7 @@ For more content, please kindly <a href="https://archlinuxstudio.github.io/" tar
 [![License: GPL 3.0](https://img.shields.io/badge/license-GPL-blue")](https://www.gnu.org/licenses/gpl-3.0.en.html)
 [![Lines](https://img.shields.io/tokei/lines/github/ArchLinuxStudio/ArchLinuxStudio.github.io)](https://img.shields.io/tokei/lines/github/ArchLinuxStudio/ArchLinuxStudio.github.io)
 [![lastcommit](https://img.shields.io/github/last-commit/ArchLinuxStudio/ArchLinuxStudio.github.io)](https://img.shields.io/github/last-commit/ArchLinuxStudio/ArchLinuxStudio.github.io)
-[![Donate with Bitcoin](https://en.cryptobadges.io/badge/micro/1Lth3oca4WnMnTnwHBcDLkEqniA2pBxkeC)](https://en.cryptobadges.io/donate/1Lth3oca4WnMnTnwHBcDLkEqniA2pBxkeC)
-[![Donate with Ethereum](https://en.cryptobadges.io/badge/micro/0x5A218a8d570d9947f42e0a4916ece7a60A181c2d)](https://en.cryptobadges.io/donate/0x5A218a8d570d9947f42e0a4916ece7a60A181c2d)
-[![Donate with Litecoin](https://en.cryptobadges.io/badge/micro/LdJXzaSzzrAxfKJdj5effRLcC7k1TbuXJ8)](https://en.cryptobadges.io/donate/LdJXzaSzzrAxfKJdj5effRLcC7k1TbuXJ8)
+[![Donate with Monero](https://img.shields.io/static/v1?label=DonatewithXMR&message=43KJJZztPtBC7k8ZjJpuw7bThW1mUH6N947TeNxvsSHD7DywRN365WZ7qpSxVopSd7cg4PFjMuUewjfvATUtTKGQLMboU36&color=ea6521)]()
 
 ---
 
@@ -27,11 +25,7 @@ yarn start
 
 We would be very grateful if we could receive virtual currency donations. With your support, the ArchLinuxStudio community will become even more enriched and active.
 
-[![Donate with Bitcoin](https://en.cryptobadges.io/badge/big/1Lth3oca4WnMnTnwHBcDLkEqniA2pBxkeC?showBalance=true)](https://en.cryptobadges.io/donate/1Lth3oca4WnMnTnwHBcDLkEqniA2pBxkeC)
-
-[![Donate with Ethereum](https://en.cryptobadges.io/badge/big/0x5A218a8d570d9947f42e0a4916ece7a60A181c2d?showBalance=true)](https://en.cryptobadges.io/donate/0x5A218a8d570d9947f42e0a4916ece7a60A181c2d)
-
-[![Donate with Litecoin](https://en.cryptobadges.io/badge/big/LdJXzaSzzrAxfKJdj5effRLcC7k1TbuXJ8?showBalance=true)](https://en.cryptobadges.io/donate/LdJXzaSzzrAxfKJdj5effRLcC7k1TbuXJ8)
+- Donate with Monero: `43KJJZztPtBC7k8ZjJpuw7bThW1mUH6N947TeNxvsSHD7DywRN365WZ7qpSxVopSd7cg4PFjMuUewjfvATUtTKGQLMboU36`
 
 ## Stargazers over time
 

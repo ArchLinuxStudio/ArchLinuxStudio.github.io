@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { Component } from "react";
 import {
   Button,
   Container,
@@ -8,7 +8,7 @@ import {
   Icon,
   Segment,
   Popup,
-} from 'semantic-ui-react';
+} from "semantic-ui-react";
 
 interface IProps {}
 
@@ -19,13 +19,13 @@ class Foundation extends Component<IProps, IState> {
 
   render() {
     return (
-      <div style={{ minHeight: '80vh' }}>
-        <Segment style={{ padding: '6em 0em' }} vertical>
+      <div style={{ minHeight: "80vh" }}>
+        <Segment style={{ padding: "6em 0em" }} vertical>
           <Container>
-            <Header as="h1" style={{ fontSize: '2.3em' }} textAlign="center">
+            <Header as="h1" style={{ fontSize: "2.3em" }} textAlign="center">
               Sustainable Support for ArchLinuxStudio
             </Header>
-            <p style={{ fontSize: '1.33em', padding: '1em 0em 0em 0em' }}>
+            <p style={{ fontSize: "1.33em", padding: "1em 0em 0em 0em" }}>
               ArchLinuxStudio is committed to achieving the goals of the free
               software movement. At present we mainly focus on four aspects.
               First, the freedom of the terminal devices that people use.
@@ -33,25 +33,25 @@ class Foundation extends Component<IProps, IState> {
               freedom to use the Internet. Fourth, the freedom of people to own
               and protect their private property.
             </p>
-            <p style={{ fontSize: '1.33em' }}>
+            <p style={{ fontSize: "1.33em" }}>
               Development in ArchLinuxStudio has involved countless volunteered
               man-hours to not only produce many tutorials and free softwares
               but also keep it up-to-date and compatible with bleeding-edge
               technology.
             </p>
-            <p style={{ fontSize: '1.33em' }}>
+            <p style={{ fontSize: "1.33em" }}>
               ArchLinuxStudio must be able to continue to provide the very best
               open-source software stack, up-to-date and accurate tutorials, and
               your contribution can make that happen. Support from you will fuel
               the future development of ArchLinuxStudio and the roll out of new
               tutorials and free softwares.
             </p>
-            <p style={{ fontSize: '1.33em' }}>
+            <p style={{ fontSize: "1.33em" }}>
               Supporters of the ArchLinuxStudio Foundation will be featured on
               our website and will be helping to bolster the steady growth of
-              free software and ArchLinuxStudio.{' '}
+              free software and ArchLinuxStudio.{" "}
             </p>
-            <p style={{ fontSize: '1.33em' }}>
+            <p style={{ fontSize: "1.33em" }}>
               If you are interested in supporting the Foundation, you can donate
               cryptocurrency directly by clicking the button below. After that,
               you can email us(archlinuxstudio@tutamail.com) the donation
@@ -60,7 +60,7 @@ class Foundation extends Component<IProps, IState> {
               information, you can donate via Monero, and we send our best
               wishes to every anonymous donor.
             </p>
-            <Grid columns={5} doubling>
+            <Grid columns={2} doubling>
               <Grid.Column>
                 <Popup
                   content="43KJJZztPtBC7k8ZjJpuw7bThW1mUH6N947TeNxvsSHD7DywRN365WZ7qpSxVopSd7cg4PFjMuUewjfvATUtTKGQLMboU36"
@@ -69,9 +69,9 @@ class Foundation extends Component<IProps, IState> {
                   trigger={
                     <Button
                       style={{
-                        backgroundColor: '#ff6600',
-                        color: 'white',
-                        width: '100%',
+                        backgroundColor: "#ff6600",
+                        color: "white",
+                        width: "100%",
                       }}
                       content="Button"
                     >
@@ -79,39 +79,6 @@ class Foundation extends Component<IProps, IState> {
                     </Button>
                   }
                 />
-              </Grid.Column>
-              <Grid.Column>
-                <Button
-                  style={{ backgroundColor: '#f7931a', color: 'white' }}
-                  as="a"
-                  href="https://en.cryptobadges.io/donate/1Lth3oca4WnMnTnwHBcDLkEqniA2pBxkeC"
-                  target="_blank"
-                  fluid
-                >
-                  <Icon name="btc"></Icon>Donate BTC
-                </Button>
-              </Grid.Column>
-              <Grid.Column>
-                <Button
-                  style={{ backgroundColor: '#151c2f', color: 'white' }}
-                  as="a"
-                  href="https://en.cryptobadges.io/donate/0x5A218a8d570d9947f42e0a4916ece7a60A181c2d"
-                  target="_blank"
-                  fluid
-                >
-                  <Icon name="ethereum"></Icon>Donate ETH
-                </Button>
-              </Grid.Column>
-              <Grid.Column>
-                <Button
-                  color="grey"
-                  as="a"
-                  href="https://en.cryptobadges.io/donate/LdJXzaSzzrAxfKJdj5effRLcC7k1TbuXJ8"
-                  target="_blank"
-                  fluid
-                >
-                  <Icon name="italic"></Icon>Donate LTC
-                </Button>
               </Grid.Column>
               <Grid.Column>
                 <Button
@@ -129,25 +96,25 @@ class Foundation extends Component<IProps, IState> {
               as="h1"
               className="header"
               horizontal
-              style={{ margin: '3em 0em', textTransform: 'uppercase' }}
+              style={{ margin: "3em 0em", textTransform: "uppercase" }}
             >
               About Us
             </Divider>
-            <p style={{ fontSize: '1.33em' }}>
+            <p style={{ fontSize: "1.33em" }}>
               ArchLinuxStudio was first made known to the public through the
               ArchLinuxTutorial. In fact, we want to use ArchLinuxTutorial as an
               entry point to lead more people to know and walk into the world of
               free software.
             </p>
 
-            <p style={{ fontSize: '1.33em' }}>
+            <p style={{ fontSize: "1.33em" }}>
               To secure the future development of ArchLinuxStudio it has become
               incumbent upon the project to organise a process for accepting the
               donations of those entities who wish to contribute to the efforts
               of ArchLinuxStudio.
             </p>
 
-            <p style={{ fontSize: '1.33em' }}>
+            <p style={{ fontSize: "1.33em" }}>
               The ultimate goal of ArchLinuxStudio is to provide a full range of
               free software support for people in all aspects of their daily
               lives. The Free Software Foundation has already made a great
@@ -158,13 +125,13 @@ class Foundation extends Component<IProps, IState> {
 
             <Divider></Divider>
 
-            <p style={{ fontSize: '1.33em' }}>
+            <p style={{ fontSize: "1.33em" }}>
               Donations to ArchLinuxStudio Foundation will be used only on
               endeavours which help to fulfil that goal and only on endeavours
               related to the ArchLinuxStudio Project.
             </p>
 
-            <p style={{ fontSize: '1.33em' }}>
+            <p style={{ fontSize: "1.33em" }}>
               Such endeavours include:
               <li>Development of new ArchLinuxStudio project</li>
               <li>
@@ -173,7 +140,7 @@ class Foundation extends Component<IProps, IState> {
               </li>
               <li>Promotion of ArchLinuxStudio (events, hackathon, goodies)</li>
             </p>
-            <p style={{ fontSize: '1.33em' }}>
+            <p style={{ fontSize: "1.33em" }}>
               Donations shall not be used for:
               <li>
                 Developing Proprietary Software and Proprietary Software
@@ -185,12 +152,12 @@ class Foundation extends Component<IProps, IState> {
               </li>
             </p>
             <Divider></Divider>
-            <p style={{ fontSize: '1.33em' }}>
+            <p style={{ fontSize: "1.33em" }}>
               The costs associated with operating the supporting structure, such
               as legal and accountancy fees, taxes, establishment fees and
               server costs will be covered by donations to the foundation.
             </p>
-            <p style={{ fontSize: '1.33em' }}>
+            <p style={{ fontSize: "1.33em" }}>
               The custodians of the Foundation shall undertake to vote upon any
               endeavour which may be in conflict with another priority. The main
               admin of ArchLinuxStudio, shall possess two votes for the purpose
