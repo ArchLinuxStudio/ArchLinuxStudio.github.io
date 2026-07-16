@@ -3,7 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f1efe7" />
+    <meta name="theme-color" content="#f1efe7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b0c0d" media="(prefers-color-scheme: dark)" />
+    <style>
+      html, body { background: #f1efe7; }
+      @media (prefers-color-scheme: dark) {
+        html, body { background: #0b0c0d; }
+      }
+    </style>
     <meta
       name="description"
       content="ArchLinuxStudio creates open tutorials and free software for a more private, capable, and user-controlled digital life."
@@ -30,7 +37,7 @@
     <link rel="icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/logo192.png" />
     <link rel="manifest" href="/manifest.json" />
-    <title>ArchLinuxStudio — Technology should be user-owned</title>
+    <title>ArchLinuxStudio - Technology should be user-owned</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to view this website.</noscript>
