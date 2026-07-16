@@ -1,112 +1,47 @@
-import React, { Component } from 'react';
-import { Container, Grid, Header, List, Segment } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
-interface IProps {}
+const communityLinks = [
+  ['Matrix', 'https://matrix.to/#/#ArchLinuxStudio:matrix.org'],
+  ['Telegram', 'https://t.me/FSF_Ministry_of_Truth'],
+  ['GitHub', 'https://github.com/ArchLinuxStudio'],
+  ['YouTube', 'https://www.youtube.com/channel/UCVO7lXKucA6z3O37WV7FG5w'],
+];
 
-interface IState {}
-
-/* Heads up!
- * HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled
- * components for such things.
- */
-class Footer extends Component<IProps, IState> {
-  static defaultProps = {};
-
-  render() {
-    return (
-      <Segment inverted vertical style={{ padding: '5em 0em' }}>
-        <Container>
-          <Grid divided inverted stackable>
-            <Grid.Row>
-              <Grid.Column width={3}>
-                <Header inverted as="h4" content="About" />
-                <List link inverted>
-                  <List.Item
-                    as="a"
-                    href="https://matrix.to/#/#ArchLinuxStudio:matrix.org"
-                    target="_blank"
-                  >
-                    <List.Icon name="chat" />
-                    <List.Content>[Matrix]</List.Content>
-                  </List.Item>
-                  <List.Item
-                    as="a"
-                    href="https://t.me/FSF_Ministry_of_Truth"
-                    target="_blank"
-                  >
-                    <List.Icon name="telegram" />
-                    <List.Content>Telegram</List.Content>
-                  </List.Item>
-
-                  <List.Item
-                    as="a"
-                    href="https://github.com/ArchLinuxStudio"
-                    target="_blank"
-                  >
-                    <List.Icon name="github" />
-                    <List.Content>Github</List.Content>
-                  </List.Item>
-
-                  <List.Item as="a" href="" target="_blank">
-                    <List.Icon name="gitlab" />
-                    <List.Content>Gitlab / Stay tuned</List.Content>
-                  </List.Item>
-
-                  <List.Item
-                    as="a"
-                    href="https://www.youtube.com/channel/UCVO7lXKucA6z3O37WV7FG5w"
-                    target="_blank"
-                  >
-                    <List.Icon name="youtube play" />
-                    <List.Content>Youtube</List.Content>
-                  </List.Item>
-                </List>
-              </Grid.Column>
-              <Grid.Column width={3}>
-                <Header inverted as="h4" content="Cooperation Service" />
-                <List link inverted>
-                  <List.Item
-                    as="a"
-                    href="https://www.glados.rocks/landing/9FMKX-GYLMK-ZYIZW-5U3T0"
-                    target="_blank"
-                  >
-                    <List.Icon name="plane" />
-                    <List.Content>GLaDOS AirLine</List.Content>
-                  </List.Item>
-                  <List.Item as="a" href="https://t.me/LLC_XMR" target="_blank">
-                    <List.Icon name="google" />
-                    <List.Content>Google Voice Account</List.Content>
-                  </List.Item>
-                  <List.Item
-                    as="a"
-                    href="https://dydx.exchange/r/MXMIIPVY"
-                    target="_blank"
-                  >
-                    <List.Icon name="bitcoin" />
-                    <List.Content>DYDX Exchange</List.Content>
-                  </List.Item>
-                </List>
-              </Grid.Column>
-              <Grid.Column width={7}>
-                <Header as="h4" inverted>
-                  Free As In Freedom
-                </Header>
-                <p>
-                  Free software is software that respects your freedom and the
-                  social solidarity of your community. So it's free as in
-                  freedom. This website does not use cookies nor collect
-                  personal data.
-                </p>
-                <p>
-                  Copyright © 2017-2023 ArchLinuxStudio, All Rights Reversed.
-                </p>
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        </Container>
-      </Segment>
-    );
-  }
+function Footer() {
+  return (
+    <footer className="site-footer">
+      <div className="page-width footer-masthead">
+        <strong>ARCHLINUX</strong><em>STUDIO</em><span>/</span>
+      </div>
+      <div className="page-width footer-grid">
+        <div className="footer-statement">
+          <span>INDEPENDENT SINCE 2017</span>
+          <p>Open manuals and free software for people who intend to remain in control.</p>
+        </div>
+        <nav className="footer-links" aria-label="Footer navigation">
+          <span>INDEX</span>
+          <Link to="/">01 / Front page</Link>
+          <Link to="/product_list">02 / Library</Link>
+          <Link to="/foundation">03 / Foundation</Link>
+        </nav>
+        <div className="footer-links">
+          <span>CHANNELS</span>
+          {communityLinks.map(([label, href]) => (
+            <a href={href} target="_blank" rel="noreferrer" key={label}>{label} ↗</a>
+          ))}
+        </div>
+        <div className="footer-privacy">
+          <span>PRIVACY NOTICE</span>
+          <strong>0</strong>
+          <p>Cookies, trackers, accounts, or personal data collected.</p>
+        </div>
+      </div>
+      <div className="page-width footer-bottom">
+        <span>© 2017—{new Date().getFullYear()} ARCHLINUXSTUDIO</span>
+        <span>ALL RIGHTS REVERSED / GPL-3.0</span>
+      </div>
+    </footer>
+  );
 }
 
 export default Footer;

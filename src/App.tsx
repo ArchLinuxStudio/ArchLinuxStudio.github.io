@@ -1,36 +1,38 @@
-import { Component } from 'react';
-import ResponsiveContainer from '#/ResponsiveContainer';
-
-import Footer from '#/Footer';
-import Homepage from './Homepage';
-import { Route } from 'react-router';
-import { Routes } from 'react-router-dom';
-import ProductList from './ProductList';
+import { useEffect } from 'react';
+import { HashRouter, Route, Routes, useLocation } from 'react-router-dom';
+import Footer from './Footer';
 import Foundation from './Foundation';
-import { foundationPathName, productListPathName } from './const';
-interface IProps {}
+import Homepage from './Homepage';
+import ProductList from './ProductList';
+import SiteHeader from './SiteHeader';
 
-interface IState {}
+function ScrollToTop() {
+  const location = useLocation();
 
-class App extends Component<IProps, IState> {
-  state = {};
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, [location.pathname]);
 
-  componentDidMount = async () => {};
+  return null;
+}
 
-  render() {
-    return (
-      <>
-        <ResponsiveContainer>
-          <Routes>
-            <Route path={foundationPathName} element={<Foundation />}></Route>
-            <Route path={productListPathName} element={<ProductList />}></Route>
-            <Route path="/" element={<Homepage />}></Route>
-          </Routes>
-        </ResponsiveContainer>
-        <Footer />
-      </>
-    );
-  }
+function App() {
+  return (
+    <HashRouter>
+      <ScrollToTop />
+      <SiteHeader />
+      <main>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/home" element={<Homepage />} />
+          <Route path="/product_list" element={<ProductList />} />
+          <Route path="/foundation" element={<Foundation />} />
+          <Route path="*" element={<Homepage />} />
+        </Routes>
+      </main>
+      <Footer />
+    </HashRouter>
+  );
 }
 
 export default App;

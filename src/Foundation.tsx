@@ -1,173 +1,151 @@
-import { Component } from "react";
-import {
-  Button,
-  Container,
-  Divider,
-  Grid,
-  Header,
-  Icon,
-  Segment,
-  Popup,
-} from "semantic-ui-react";
+import { useState } from 'react';
+import Reveal from './Reveal';
 
-interface IProps {}
+const MONERO_ADDRESS =
+  '43KJJZztPtBC7k8ZjJpuw7bThW1mUH6N947TeNxvsSHD7DywRN365WZ7qpSxVopSd7cg4PFjMuUewjfvATUtTKGQLMboU36';
 
-interface IState {}
+const freedoms = [
+  ['01', 'Control your device', 'Keep the terminal, operating system, and everyday tools under user control.'],
+  ['02', 'Protect your privacy', 'Make practical privacy knowledge accessible to people facing real risks.'],
+  ['03', 'Reach the open internet', 'Build and explain resilient technologies for the free movement of information.'],
+  ['04', 'Own your digital property', 'Explore open systems that let people hold and protect what belongs to them.'],
+];
 
-class Foundation extends Component<IProps, IState> {
-  static defaultProps = {};
+function Foundation() {
+  const [copyState, setCopyState] = useState('Copy address');
 
-  render() {
-    return (
-      <div style={{ minHeight: "80vh" }}>
-        <Segment style={{ padding: "6em 0em" }} vertical>
-          <Container>
-            <Header as="h1" style={{ fontSize: "2.3em" }} textAlign="center">
-              Sustainable Support for ArchLinuxStudio
-            </Header>
-            <p style={{ fontSize: "1.33em", padding: "1em 0em 0em 0em" }}>
-              ArchLinuxStudio is committed to achieving the goals of the free
-              software movement. At present we mainly focus on four aspects.
-              First, the freedom of the terminal devices that people use.
-              Second, people's freedom to protect their privacy. Third, people's
-              freedom to use the Internet. Fourth, the freedom of people to own
-              and protect their private property.
-            </p>
-            <p style={{ fontSize: "1.33em" }}>
-              Development in ArchLinuxStudio has involved countless volunteered
-              man-hours to not only produce many tutorials and free softwares
-              but also keep it up-to-date and compatible with bleeding-edge
-              technology.
-            </p>
-            <p style={{ fontSize: "1.33em" }}>
-              ArchLinuxStudio must be able to continue to provide the very best
-              open-source software stack, up-to-date and accurate tutorials, and
-              your contribution can make that happen. Support from you will fuel
-              the future development of ArchLinuxStudio and the roll out of new
-              tutorials and free softwares.
-            </p>
-            <p style={{ fontSize: "1.33em" }}>
-              Supporters of the ArchLinuxStudio Foundation will be featured on
-              our website and will be helping to bolster the steady growth of
-              free software and ArchLinuxStudio.{" "}
-            </p>
-            <p style={{ fontSize: "1.33em" }}>
-              If you are interested in supporting the Foundation, you can donate
-              cryptocurrency directly by clicking the button below. After that,
-              you can email us(archlinuxstudio@tutamail.com) the donation
-              information, along with any personal or company information you
-              need to featured on our website. If you don't want to leave any
-              information, you can donate via Monero, and we send our best
-              wishes to every anonymous donor.
-            </p>
-            <Grid columns={2} doubling>
-              <Grid.Column>
-                <Popup
-                  content="43KJJZztPtBC7k8ZjJpuw7bThW1mUH6N947TeNxvsSHD7DywRN365WZ7qpSxVopSd7cg4PFjMuUewjfvATUtTKGQLMboU36"
-                  on="click"
-                  pinned
-                  trigger={
-                    <Button
-                      style={{
-                        backgroundColor: "#ff6600",
-                        color: "white",
-                        width: "100%",
-                      }}
-                      content="Button"
-                    >
-                      <Icon name="money bill alternate"></Icon>Donate XMR
-                    </Button>
-                  }
-                />
-              </Grid.Column>
-              <Grid.Column>
-                <Button
-                  color="teal"
-                  as="a"
-                  href="mailto:archlinuxstudio@tutamail.com"
-                  target="_blank"
-                  fluid
-                >
-                  <Icon name="mail"></Icon>Send Email
-                </Button>
-              </Grid.Column>
-            </Grid>
-            <Divider
-              as="h1"
-              className="header"
-              horizontal
-              style={{ margin: "3em 0em", textTransform: "uppercase" }}
-            >
-              About Us
-            </Divider>
-            <p style={{ fontSize: "1.33em" }}>
-              ArchLinuxStudio was first made known to the public through the
-              ArchLinuxTutorial. In fact, we want to use ArchLinuxTutorial as an
-              entry point to lead more people to know and walk into the world of
-              free software.
-            </p>
+  const copyAddress = async () => {
+    try {
+      await navigator.clipboard.writeText(MONERO_ADDRESS);
+      setCopyState('Address copied');
+      window.setTimeout(() => setCopyState('Copy address'), 2400);
+    } catch {
+      setCopyState('Select address below');
+    }
+  };
 
-            <p style={{ fontSize: "1.33em" }}>
-              To secure the future development of ArchLinuxStudio it has become
-              incumbent upon the project to organise a process for accepting the
-              donations of those entities who wish to contribute to the efforts
-              of ArchLinuxStudio.
-            </p>
+  return (
+    <div className="page-shell foundation-page">
+      <section className="foundation-hero section-shell">
+        <div className="foundation-hero-copy">
+          <p className="eyebrow">ArchLinuxStudio Foundation</p>
+          <h1>Keep independent knowledge <span>independent.</span></h1>
+          <p>
+            Volunteer time built every tutorial and tool in this community.
+            Sustainable support keeps the work current, public, and free from
+            commercial pressure.
+          </p>
+        </div>
+        <div className="foundation-hero-aside">
+          <span>Our commitment</span>
+          <strong>100%</strong>
+          <p>of support stays within work related to the ArchLinuxStudio project.</p>
+        </div>
+      </section>
 
-            <p style={{ fontSize: "1.33em" }}>
-              The ultimate goal of ArchLinuxStudio is to provide a full range of
-              free software support for people in all aspects of their daily
-              lives. The Free Software Foundation has already made a great
-              contribution to this goal, but we believe that more advocacy and
-              efforts are needed from more community organisations, and
-              ArchLinuxStudio is one of them.
-            </p>
+      <section className="section-shell section-block foundation-freedoms">
+        <Reveal className="section-heading split-heading">
+          <div>
+            <p className="eyebrow">What support protects</p>
+            <h2>Four freedoms, one practical mission.</h2>
+          </div>
+          <p>
+            The goal is not growth for its own sake. It is dependable public
+            infrastructure for people who want agency over their digital lives.
+          </p>
+        </Reveal>
+        <div className="freedom-list">
+          {freedoms.map(([index, title, copy], itemIndex) => (
+            <Reveal className="freedom-row" delay={itemIndex * 70} key={title}>
+              <span>{index}</span>
+              <h3>{title}</h3>
+              <p>{copy}</p>
+            </Reveal>
+          ))}
+        </div>
+      </section>
 
-            <Divider></Divider>
+      <section className="support-wrap">
+        <div className="section-shell support-grid">
+          <Reveal className="support-copy">
+            <p className="eyebrow">Sustainable support</p>
+            <h2>Your contribution funds the unglamorous, necessary work.</h2>
+            <p>
+              Keeping technical material trustworthy means testing instructions,
+              tracking fast-moving dependencies, maintaining software, and
+              answering the community. Donations give volunteers room to do that
+              work carefully.
+            </p>
+            <ul className="support-list">
+              <li><span>→</span> New free-software projects</li>
+              <li><span>→</span> Updated tutorials, documentation, and video</li>
+              <li><span>→</span> Community events and educational outreach</li>
+              <li><span>→</span> Essential project and infrastructure costs</li>
+            </ul>
+          </Reveal>
 
-            <p style={{ fontSize: "1.33em" }}>
-              Donations to ArchLinuxStudio Foundation will be used only on
-              endeavours which help to fulfil that goal and only on endeavours
-              related to the ArchLinuxStudio Project.
+          <Reveal className="donation-card" delay={120}>
+            <div className="donation-card-head">
+              <div>
+                <span className="donation-symbol">ɱ</span>
+                <p><strong>Donate privately</strong><br />Monero · XMR</p>
+              </div>
+              <span className="status-badge"><i /> Direct</span>
+            </div>
+            <p className="address-label">WALLET ADDRESS</p>
+            <code className="wallet-address">{MONERO_ADDRESS}</code>
+            <button className="button button-primary copy-button" type="button" onClick={copyAddress}>
+              {copyState}
+            </button>
+            <p className="donation-note">
+              Monero allows anonymous support. No donor identity is required.
             </p>
+          </Reveal>
+        </div>
+      </section>
 
-            <p style={{ fontSize: "1.33em" }}>
-              Such endeavours include:
-              <li>Development of new ArchLinuxStudio project</li>
-              <li>
-                Production of training/tutorial material (Video,
-                documentation...)
-              </li>
-              <li>Promotion of ArchLinuxStudio (events, hackathon, goodies)</li>
-            </p>
-            <p style={{ fontSize: "1.33em" }}>
-              Donations shall not be used for:
-              <li>
-                Developing Proprietary Software and Proprietary Software
-                Tutorials
-              </li>
-              <li>
-                Add support for proprietary software to existing tutorials and
-                software
-              </li>
-            </p>
-            <Divider></Divider>
-            <p style={{ fontSize: "1.33em" }}>
-              The costs associated with operating the supporting structure, such
-              as legal and accountancy fees, taxes, establishment fees and
-              server costs will be covered by donations to the foundation.
-            </p>
-            <p style={{ fontSize: "1.33em" }}>
-              The custodians of the Foundation shall undertake to vote upon any
-              endeavour which may be in conflict with another priority. The main
-              admin of ArchLinuxStudio, shall possess two votes for the purpose
-              of breaking a tie.
-            </p>
-          </Container>
-        </Segment>
-      </div>
-    );
-  }
+      <section className="section-shell stewardship section-block">
+        <Reveal className="stewardship-heading">
+          <p className="eyebrow">Stewardship</p>
+          <h2>Clear boundaries matter.</h2>
+        </Reveal>
+        <div className="stewardship-grid">
+          <Reveal className="stewardship-card stewardship-card-positive">
+            <span className="stewardship-icon" aria-hidden="true">+</span>
+            <h3>Donations may support</h3>
+            <ul>
+              <li>Free and open-source project development</li>
+              <li>Training and tutorial production</li>
+              <li>Community promotion and events</li>
+              <li>Legal, accounting, server, and operating costs</li>
+            </ul>
+          </Reveal>
+          <Reveal className="stewardship-card stewardship-card-negative" delay={90}>
+            <span className="stewardship-icon" aria-hidden="true">−</span>
+            <h3>Donations will not support</h3>
+            <ul>
+              <li>Development of proprietary software</li>
+              <li>Tutorials promoting proprietary software</li>
+              <li>Adding proprietary dependencies to existing work</li>
+              <li>Endeavours unrelated to ArchLinuxStudio</li>
+            </ul>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="contact-strip">
+        <Reveal className="section-shell contact-strip-inner">
+          <div>
+            <p className="eyebrow">Need a receipt or public acknowledgement?</p>
+            <h2>Talk to the project directly.</h2>
+          </div>
+          <a className="button button-light" href="mailto:archlinuxstudio@tutamail.com">
+            archlinuxstudio@tutamail.com <span aria-hidden="true">↗</span>
+          </a>
+        </Reveal>
+      </section>
+    </div>
+  );
 }
 
 export default Foundation;

@@ -1,306 +1,262 @@
-import { Component } from 'react';
-import {
-  Button,
-  Container,
-  Divider,
-  Grid,
-  Header,
-  Icon,
-  Image,
-  Segment,
-} from 'semantic-ui-react';
+import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
+import arch from './images/ar1.png';
+import butterfly from './images/butterfly.webp';
+import cnetwork from './images/c-network.png';
+import privacy from './images/v.jpg';
+import Reveal from './Reveal';
+import movementFilm from './videos/FSF_30_720p.webm';
 
-import ES from '#/images/ES.webp';
-import JA2 from '#/images/JA2.jpg';
-import RS_GTA from '#/images/RS_GTA1.jpg';
-import HomepageHeading from '#/HomepageHeading';
-import './homepage_video.css';
-import Loading from '#/images/loading.gif';
-import FSF30 from '#/videos/FSF_30_720p.webm';
+const principles = [
+  ['01', 'Your machine', 'A computer should answer to the person using it—not its vendor. Learn the system and take it back.'],
+  ['02', 'Your privacy', 'Privacy is a practice. We document practical defenses for people living with real surveillance.'],
+  ['03', 'Your network', 'Information should cross borders. We study protocols, censorship, and resilient communication.'],
+  ['04', 'Your software', 'The freedom to run, inspect, modify, and share software is the foundation beneath everything else.'],
+];
 
-interface IProps {}
+const manuals = [
+  {
+    number: '001',
+    type: 'FIELD MANUAL',
+    title: 'Arch Linux Tutorial',
+    copy: 'From first boot to a secure daily system. Every decision explained.',
+    image: arch,
+    href: 'https://archlinuxstudio.github.io/ArchLinuxTutorial/#/',
+  },
+  {
+    number: '002',
+    type: 'THREAT MODEL',
+    title: 'Modern Privacy Protection',
+    copy: 'A practical guide for navigating an internet built around surveillance.',
+    image: privacy,
+    href: 'https://archlinuxstudio.github.io/ModernSecurityProtectionGuide/#/',
+  },
+  {
+    number: '003',
+    type: 'DEEP STUDY',
+    title: 'Networks & Encryption',
+    copy: 'Protocols, code, and cryptography—learn what the tools are doing underneath.',
+    image: cnetwork,
+    href: 'https://archlinuxstudio.github.io/LinuxNetworkProgrammingAndEncryption/#/',
+  },
+];
 
-interface IState {
-  muteVideo: boolean;
+function Homepage() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const filmSectionRef = useRef<HTMLElement>(null);
+  const [filmMuted, setFilmMuted] = useState(true);
+  const [filmPaused, setFilmPaused] = useState(false);
+  const [filmLoaded, setFilmLoaded] = useState(false);
 
-  quotesHeight: number;
-}
+  useEffect(() => {
+    const section = filmSectionRef.current;
+    if (!section || typeof IntersectionObserver === 'undefined') {
+      setFilmLoaded(true);
+      return;
+    }
 
-/* Heads up!
- * HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled
- * components for such things.
- */
-class Homepage extends Component<IProps, IState> {
-  static defaultProps = {};
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setFilmLoaded(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '320px 0px' }
+    );
 
-  state = {
-    quotesHeight: 200,
-    muteVideo: true,
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
+  const toggleFilmPlayback = async () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (video.paused) {
+      await video.play();
+      setFilmPaused(false);
+    } else {
+      video.pause();
+      setFilmPaused(true);
+    }
   };
 
-  componentDidMount = async () => {
-    setTimeout(() => {
-      this.getHeaderHight();
-    }, 300);
-
-    window.addEventListener('resize', this.resize);
-  };
-
-  resize = () => {
-    this.getHeaderHight();
-  };
-
-  componentWillUnmount = () => {
-    window.removeEventListener('resize', this.resize);
-  };
-
-  //let left and right quote with same height
-  getHeaderHight = async () => {
-    let quote = document.getElementById('quote');
-    let quotesHeight = window
-      .getComputedStyle(quote!)
-      .getPropertyValue('height');
-    this.setState({ quotesHeight: Number(quotesHeight.split('px')[0]) });
-  };
-
-  handleMuteVideoClicked = () => {
-    this.setState({ muteVideo: !this.state.muteVideo });
-  };
-
-  render() {
-    return (
-      <>
-        <div
-          className="homepage-video-wrapper"
-          style={{
-            minHeight: 600,
-            alignItems: 'center',
-            flex: 1,
-          }}
-        >
-          <video
-            muted={this.state.muteVideo}
-            autoPlay={true}
-            loop={true}
-            playsInline={true}
-            src={FSF30}
-            poster={Loading}
-          ></video>
-
-          <div className="header">
-            <HomepageHeading />
-          </div>
-          <Icon
-            name={this.state.muteVideo ? 'volume off' : 'volume up'}
-            size="big"
-            onClick={this.handleMuteVideoClicked}
-            style={{
-              color: 'white',
-              position: 'absolute',
-              bottom: 50,
-              right: 50,
-              textShadow: '1px 1px 18px rgba(0, 0, 0, 1)',
-            }}
-          />
+  return (
+    <>
+      <section className="front-hero page-width">
+        <div className="issue-line">
+          <span>ALS / VOL. 017</span>
+          <span>DOCUMENTING DIGITAL SELF-DEFENCE</span>
+          <span>2017—2026</span>
         </div>
 
-        <Segment style={{ padding: '8em 0em' }} vertical>
-          <Grid container stackable verticalAlign="middle">
-            <Grid.Row>
-              <Grid.Column width={8}>
-                <Header as="h3" style={{ fontSize: '2em' }}>
-                  We Fight For Freedom
-                </Header>
-                <p style={{ fontSize: '1.33em' }}>
-                  Free software means that the users have the freedom to run,
-                  edit, contribute to, and share the software. Thus, free
-                  software is a matter of liberty, not price. We have been
-                  defending the rights of all software users for the past 5
-                  years. Donate and help sustain us for many more.
-                </p>
-                <Header as="h3" style={{ fontSize: '2em' }}>
-                  Value
-                </Header>
-                <p style={{ fontSize: '1.33em' }}>
-                  Value your freedom or you will lose it, teaches history.
-                  'Don't bother us with politics', respond those who don't want
-                  to learn.
-                </p>
-              </Grid.Column>
-              <Grid.Column floated="right" width={7}>
-                <Image bordered rounded size="huge" src={RS_GTA} />
-              </Grid.Column>
-            </Grid.Row>
-            <Grid.Row>
-              <Grid.Column textAlign="center">
-                <Button
-                  href="https://www.fsf.org/"
-                  target="_blank"
-                  size="huge"
-                  style={{
-                    color: '#F8F5D6',
-                    backgroundColor: '#80D1C8',
-                  }}
-                >
-                  Check Them Out
-                </Button>
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        </Segment>
+        <h1 className="front-title" aria-label="Free software is a daily practice">
+          <span>FREE SOFTWARE</span>
+          <span>IS A DAILY</span>
+          <em>PRACTICE.</em>
+        </h1>
 
-        <Segment style={{ padding: '0em' }} vertical>
-          <Grid celled="internally" columns="equal" stackable>
-            <Grid.Row textAlign="center">
-              <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                <Header as="h3" style={{ fontSize: '1.7em' }} id="quote">
-                  "I can't in good conscience allow the U.S. government to
-                  destroy privacy, internet freedom and basic liberties for
-                  people around the world with this massive surveillance machine
-                  they're secretly building. "
-                </Header>
-                <p
-                  style={{
-                    fontSize: '1.33em',
-                    textShadow: '1px 1px 18px rgba(0, 0, 0, 1)',
-                  }}
-                >
-                  <Image
-                    size="small"
-                    avatar
-                    src={ES}
-                    style={{
-                      boxShadow:
-                        '0 2px 18px rgba(0,0,0,.6),0 2px 18px rgba(0,0,0,.6)',
-                    }}
-                  />
-                  <b>Edward Snowden</b> 2013
-                </p>
-              </Grid.Column>
+        <div className="front-intro">
+          <p className="front-deck">
+            An independent community publishing the knowledge and code people
+            need to own their digital lives.
+          </p>
+          <div className="front-actions">
+            <Link className="ink-button" to="/product_list">Open the library <span>→</span></Link>
+            <a href="https://github.com/ArchLinuxStudio" target="_blank" rel="noreferrer">
+              Read the source ↗
+            </a>
+          </div>
+          <div className="edition-stamp" aria-hidden="true">
+            <strong>ALS</strong><span>EST.<br />2017</span>
+          </div>
+        </div>
+      </section>
 
-              <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                <Header
-                  as="h3"
-                  style={{ fontSize: '1.7em', height: this.state.quotesHeight }}
-                >
-                  "Every time we witness an injustice and do not act, we train
-                  our character to be passive in its presence and thereby
-                  eventually lose all ability to defend ourselves and those we
-                  love."
-                </Header>
-                <p
-                  style={{
-                    fontSize: '1.33em',
-                    textShadow: '1px 1px 18px rgba(0, 0, 0, 1)',
-                  }}
-                >
-                  <Image
-                    avatar
-                    size="small"
-                    src={JA2}
-                    style={{
-                      boxShadow:
-                        '0 2px 18px rgba(0,0,0,.6),0 2px 18px rgba(0,0,0,.6)',
-                    }}
-                  />
-                  <b>Julian Assange</b> 2007
-                </p>
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        </Segment>
+      <div className="command-ribbon" aria-label="Community status">
+        <div className="ribbon-track">
+          <span><b>$</b> whoami</span><strong>THE USER</strong>
+          <span><b>$</b> license</span><strong>GPL-3.0</strong>
+          <span><b>$</b> trackers</span><strong>NONE</strong>
+          <span><b>$</b> status</span><strong>INDEPENDENT</strong>
+          <span><b>$</b> pacman -S</span><strong>FREEDOM</strong>
+        </div>
+      </div>
 
-        <Segment style={{ padding: '8em 0em' }} vertical>
-          <Container text>
-            <Header as="h3" style={{ fontSize: '2em' }}>
-              Free Software Movement and Blockchain Tech
-            </Header>
-            <p style={{ fontSize: '1.33em' }}>
-              For the blockchain, it can be said that it extends the concept of
-              the free software movement to a wider field. Such as finance,
-              social activities, and possibly even the political field in the
-              future. The important concept of decentralization brought by
-              blockchain technology, and the cryptocurrency system that grows on
-              it, have actually created a great threat to traditional powers.
-              Blockchain and its cryptocurrency system are wings, and we believe
-              that the free software movement will have a better future with it.
-            </p>
-            <Button
-              as="a"
-              href="https://en.wikipedia.org/wiki/Blockchain"
-              target="_blank"
-              size="large"
-              rel="noreferrer"
-              style={{
-                color: '#F8F5D6',
-                backgroundColor: '#80D1C8',
-              }}
+      <section className="editorial-intro page-width section-space">
+        <Reveal className="margin-note">
+          <span>EDITOR'S NOTE</span>
+          <p>We are not the official Arch Linux project. We are a community that starts with Arch and asks a larger question.</p>
+        </Reveal>
+        <Reveal className="editorial-statement" delay={90}>
+          <p>
+            What would technology look like if it respected the people using it?
+            <em> We make that question practical.</em>
+          </p>
+        </Reveal>
+      </section>
+
+      <section className="principles page-width section-space">
+        <Reveal className="section-index">
+          <span>SECTION 01</span>
+          <h2>Four freedoms.<br />No fine print.</h2>
+          <p>Our work stays focused on the places where personal agency becomes concrete.</p>
+        </Reveal>
+        <div className="principle-list">
+          {principles.map(([number, title, copy], index) => (
+            <Reveal className="principle-row" delay={index * 55} key={title}>
+              <span>{number}</span>
+              <h3>{title}</h3>
+              <p>{copy}</p>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section
+        ref={filmSectionRef}
+        className="movement-film"
+        aria-label="Free software movement archive film"
+      >
+        <video
+          ref={videoRef}
+          src={filmLoaded ? movementFilm : undefined}
+          muted={filmMuted}
+          autoPlay={filmLoaded}
+          loop
+          playsInline
+          preload="metadata"
+        />
+        <div className="film-shade" />
+        <div className="page-width film-frame">
+          <div className="film-meta">
+            <span>ARCHIVE FILM / FSF 30</span>
+            <span>FREE SOFTWARE IS A SOCIAL MOVEMENT</span>
+          </div>
+          <div className="film-title">
+            <span>WATCH / LISTEN / REMEMBER</span>
+            <h2>A movement<br />is made by <em>people.</em></h2>
+          </div>
+          <div className="film-controls">
+            <button type="button" onClick={toggleFilmPlayback}>
+              {filmPaused ? '▶ Play film' : 'Ⅱ Pause film'}
+            </button>
+            <button
+              type="button"
+              onClick={() => setFilmMuted((muted) => !muted)}
+              aria-label={filmMuted ? 'Unmute film' : 'Mute film'}
             >
-              Read More
-            </Button>
+              {filmMuted ? 'Sound off' : 'Sound on'}
+            </button>
+          </div>
+        </div>
+      </section>
 
-            <Divider
-              as="h4"
-              className="header"
-              horizontal
-              style={{
-                margin: '3em 0em',
-                textTransform: 'uppercase',
-              }}
-            >
-              <a
-                href="https://github.com/ArchLinuxStudio?q=blockchain&type=all&language=&sort="
-                target="_blank"
-                rel="noreferrer"
-              >
-                Case Studies
-              </a>
-            </Divider>
+      <section className="manuals-section section-space">
+        <div className="page-width">
+          <Reveal className="manuals-header">
+            <div>
+              <span className="reverse-label">SECTION 02 / THE LIBRARY</span>
+              <h2>Manuals for<br /><em>the real world.</em></h2>
+            </div>
+            <p>Long-form guides written to be understood, verified, and shared—not merely consumed.</p>
+          </Reveal>
 
-            <Header as="h3" style={{ fontSize: '2em' }}>
-              Blockchain election tutorial
-            </Header>
-            <p style={{ fontSize: '1.33em' }}>
-              A Decentralized Ethereum Voting Application Tutorial. Build your
-              first decentralized application, or Dapp, on the Ethereum Network
-              with this tutorial!
-            </p>
-            <Button
-              as="a"
-              href="https://github.com/ArchLinuxStudio/blockchain-election-sample"
-              target="_blank"
-              size="large"
-              style={{
-                color: '#F8F5D6',
-                backgroundColor: '#80D1C8',
-              }}
-            >
-              Learn More
-            </Button>
+          <div className="manual-list">
+            {manuals.map((manual, index) => (
+              <Reveal className="manual-row" delay={index * 70} key={manual.title}>
+                <a href={manual.href} target="_blank" rel="noreferrer">
+                  <span className="manual-number">{manual.number}</span>
+                  <span className="manual-type">{manual.type}</span>
+                  <h3>{manual.title}</h3>
+                  <p>{manual.copy}</p>
+                  <div className="manual-thumb"><img src={manual.image} alt="" /></div>
+                  <span className="manual-arrow">↗</span>
+                </a>
+              </Reveal>
+            ))}
+          </div>
 
-            <Header as="h3" style={{ fontSize: '2em' }}>
-              Blockchain election react tutorial
-            </Header>
-            <p style={{ fontSize: '1.33em' }}>
-              Same as above, but use react and typescript!
-            </p>
-            <Button
-              as="a"
-              href="https://github.com/ArchLinuxStudio/blockchain-election-react"
-              target="_blank"
-              size="large"
-              style={{
-                color: '#F8F5D6',
-                backgroundColor: '#80D1C8',
-              }}
-            >
-              Learn More
-            </Button>
-          </Container>
-        </Segment>
-      </>
-    );
-  }
+          <Link className="library-link" to="/product_list">Complete project index <span>→</span></Link>
+        </div>
+      </section>
+
+      <section className="manifesto-spread page-width section-space">
+        <Reveal className="manifesto-image">
+          <img src={butterfly} alt="Blue butterfly in motion" />
+          <span>SHADOW BUTTERFLY / A STUDY IN OPEN NETWORKS</span>
+        </Reveal>
+        <Reveal className="manifesto-text" delay={100}>
+          <span className="section-kicker">SECTION 03 / POSITION</span>
+          <h2>Freedom is not a feature.</h2>
+          <blockquote>
+            It is the right to understand, change, and share the systems shaping
+            our lives.
+          </blockquote>
+          <p>
+            Our work is public. Our code is inspectable. Our knowledge is meant
+            to travel. This website has no accounts, no cookies, and no surveillance layer.
+          </p>
+          <a href="https://www.gnu.org/philosophy/free-sw.html" target="_blank" rel="noreferrer">
+            Read the free software definition ↗
+          </a>
+        </Reveal>
+      </section>
+
+      <section className="classified-section">
+        <Reveal className="page-width classified-inner">
+          <span className="classified-label">COMMUNITY NOTICE / 017</span>
+          <h2>Readers become contributors.</h2>
+          <p>Correct a command. Rewrite a paragraph. Review the code. Ask the difficult question.</p>
+          <div>
+            <a href="https://matrix.to/#/#ArchLinuxStudio:matrix.org" target="_blank" rel="noreferrer">Join Matrix ↗</a>
+            <a href="mailto:archlinuxstudio@tutamail.com">Encrypted email ↗</a>
+          </div>
+        </Reveal>
+      </section>
+    </>
+  );
 }
 
 export default Homepage;

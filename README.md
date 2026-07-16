@@ -14,12 +14,20 @@ For more content, please kindly <a href="https://archlinuxstudio.github.io/" tar
 
 ## Develop
 
-This project was developed using react, react-router, etc. Both typescript and semantic-ui are used.
+The site is built with React 19, React Router, TypeScript, and Vite.
 
 ```bash
 yarn
 yarn start
 ```
+
+Create the production build used by GitHub Pages:
+
+```bash
+yarn build
+```
+
+The generated static site is written to `docs/`.
 
 ## Donate
 
